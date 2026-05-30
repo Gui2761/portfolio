@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Guilherme Silva | Desenvolvimento de Sites e Sistemas Profissionais</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Portfólio profissional de Guilherme Silva - Estudante de Ciência da Computação focado em soluções de software de alto impacto usando IA, automação e desenvolvimento móvel (Flutter).">
+    <meta name="keywords" content="Guilherme Silva, Portfólio, Ciência da Computação, Flutter, Dart, Python, FastAPI, SQLite, Node.js, Desenvolvedor de Software">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#213145",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline": "#76777d",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-container": "#818486",
+                        "tertiary-container": "#191c1e",
+                        "on-primary-container": "#7c839b",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary": "#000000",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-container": "#00714d",
+                        "outline-variant": "#c6c6cd",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-tint": "#565e74",
+                        "on-background": "#0b1c30",
+                        "primary-container": "#131b2e",
+                        "surface-container-low": "#eff4ff",
+                        "secondary": "#006c49",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#002113",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-container": "#6cf8bb",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface-variant": "#45464d",
+                        "secondary-fixed": "#6ffbbe"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "section-gap-desktop": "128px",
+                        "stack-lg": "32px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "section-gap-mobile": "64px"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .shadow-level-2 {
+            box-shadow: 0 10px 30px -10px rgba(11, 28, 48, 0.08);
+        }
+        .input-glow:focus-within {
+            border-color: #006c49;
+            box-shadow: 0 0 0 4px rgba(0, 108, 73, 0.15);
+        }
+        .glass-nav {
+            background-color: rgba(248, 249, 255, 0.75);
+            backdrop-filter: blur(20px);
+        }
+        .dark .glass-nav {
+            background-color: rgba(33, 49, 69, 0.75);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f9ff;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #191c1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #006c49;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-sans antialiased pt-20 transition-colors duration-300 dark:bg-tertiary-container dark:text-inverse-on-surface">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+    <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+        <a href="#" class="font-display text-2xl font-black tracking-tight text-on-surface dark:text-inverse-on-surface hover:text-secondary transition-colors">
+            Guilherme<span class="text-secondary dark:text-secondary-fixed-dim"> Silva</span>
+        </a>
+        
+        <!-- Desktop Links -->
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-medium text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#experience">Perfil</a>
+            <a class="font-medium text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#natan-construcoes">Projetos</a>
+            <a class="font-medium text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#insights">Tecnologias</a>
+            <a class="font-medium text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#contact">Contato</a>
+            
+            <!-- Dark Mode Toggle Button -->
+            <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors dark:hover:bg-inverse-surface/50 text-on-surface dark:text-inverse-on-surface" aria-label="Alternar Tema">
+                <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+                <span class="material-symbols-outlined hidden dark:block text-secondary-fixed-dim">light_mode</span>
+            </button>
+        </div>
+        
+        <div class="flex items-center gap-4">
+            <!-- Action Button -->
+            <a href="https://wa.me/558281700692?text=Ol%C3%A1%20Guilherme!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20e%20conversar%20sobre%20solu%C3%A7%C3%B5es%20de%20software%20para%20o%20meu%20projeto." target="_blank" class="hidden sm:inline-block bg-secondary text-on-secondary px-6 py-3 rounded-lg hover:bg-on-secondary-fixed-variant shadow-lg shadow-secondary/15 hover:shadow-secondary/25 transition-all duration-300 font-semibold text-sm">
+                Agendar Consulta
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-on-surface dark:text-inverse-on-surface hover:bg-surface-container dark:hover:bg-inverse-surface/50 transition-colors" aria-label="Abrir Menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute w-full left-0 bg-surface dark:bg-inverse-surface border-b border-outline-variant/30 shadow-lg px-gutter py-6 flex flex-col gap-4 animate-fade-in">
+        <a class="mobile-link text-lg font-semibold text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary transition-colors" href="#experience">Perfil</a>
+        <a class="mobile-link text-lg font-semibold text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary transition-colors" href="#natan-construcoes">Projetos</a>
+        <a class="mobile-link text-lg font-semibold text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary transition-colors" href="#insights">Tecnologias</a>
+        <a class="mobile-link text-lg font-semibold text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary transition-colors" href="#contact">Contato</a>
+        <div class="h-[1px] bg-outline-variant/30 my-2"></div>
+        <div class="flex justify-between items-center">
+            <span class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-medium">Modo Escuro</span>
+            <button id="dark-mode-toggle-mobile" class="p-2 rounded-full bg-surface-container dark:bg-surface-container-high hover:bg-outline-variant/30 transition-colors text-on-surface dark:text-inverse-on-surface">
+                <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+                <span class="material-symbols-outlined hidden dark:block text-secondary-fixed-dim">light_mode</span>
+            </button>
+        </div>
+        <a href="https://wa.me/558281700692?text=Ol%C3%A1%20Guilherme!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20estrat%C3%A9gico%20e%20conversar%20sobre%20solu%C3%A7%C3%B5es%20de%20software%20para%20o%20meu%20projeto." target="_blank" class="bg-secondary text-on-secondary px-6 py-4 rounded-lg hover:bg-on-secondary-fixed-variant text-center font-bold text-base mt-2 shadow-lg shadow-secondary/15 transition-all">
+            Agendar Consulta
+        </a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-gutter max-w-container-max mx-auto py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 space-y-8">
+        <span class="inline-flex items-center gap-2 bg-secondary/10 dark:bg-secondary-fixed-dim/10 text-secondary dark:text-secondary-fixed-dim px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-secondary dark:bg-secondary-fixed-dim animate-pulse"></span>
+            Disponível para Projetos Exclusivos
+        </span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-black text-on-surface dark:text-inverse-on-surface leading-tight tracking-tight">
+            Transforme sua Visão em <span class="bg-gradient-to-r from-secondary to-secondary-container bg-clip-text text-transparent dark:from-secondary-fixed-dim dark:to-secondary">Resultados Concretos</span>
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant dark:text-on-tertiary-fixed-variant max-w-2xl leading-relaxed">
+            Desenvolvimento de sites profissionais, aplicativos modernos e sistemas personalizados para automatizar processos e alavancar o faturamento de empresas.
+        </p>
+
+    </div>
+    <div class="lg:col-span-5">
+        <div class="bg-surface-container-lowest dark:bg-inverse-surface border border-outline-variant/30 rounded-2xl p-8 shadow-level-2 transition-transform duration-500 hover:-translate-y-2">
+            <h3 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface mb-6">Solicite seu Orçamento</h3>
+            <div class="space-y-6">
+                <p class="text-on-surface-variant dark:text-on-tertiary-fixed-variant text-base leading-relaxed">
+                    Precisa de um site profissional de alta conversão ou de um sistema inteligente sob medida para a sua empresa? Clique abaixo e faça seu orçamento grátis.
+                </p>
+                <a href="https://wa.me/558281700692?text=Ol%C3%A1%20Guilherme!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20desenvolvimento%20de%20um%20site%2Fsistema%20para%20a%20minha%20empresa." target="_blank" class="w-full bg-secondary text-on-secondary py-5 rounded-xl flex items-center justify-center gap-3 hover:bg-on-secondary-fixed-variant transition-all duration-300 font-bold text-lg shadow-lg shadow-secondary/15 hover:shadow-secondary/25">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.413-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.654zm6.233-3.876c1.464.867 3.063 1.325 4.696 1.326 5.39.002 9.774-4.381 9.777-9.77.002-2.612-1.015-5.068-2.862-6.916-1.847-1.848-4.301-2.865-6.915-2.866-5.39 0-9.774 4.382-9.777 9.771-.001 1.738.459 3.434 1.329 4.908l-.989 3.613 3.741-.981zm11.352-7.147c-.285-.143-1.688-.833-1.947-.929-.26-.095-.45-.143-.639.143-.19.286-.735.929-.903 1.118-.168.19-.335.214-.621.071-.285-.143-1.204-.444-2.292-1.415-.847-.756-1.42-1.688-1.587-1.974-.168-.285-.018-.44.125-.581.129-.126.285-.333.427-.5.143-.167.19-.286.285-.476.095-.19.048-.357-.024-.5-.071-.143-.639-1.541-.875-2.113-.23-.556-.465-.48-.64-.488-.165-.008-.356-.01-.546-.01-.19 0-.5.071-.76.357-.26.286-.998.976-.998 2.381 0 1.405 1.022 2.761 1.164 2.952.143.19 2.012 3.073 4.874 4.312.68.295 1.212.471 1.625.602.684.218 1.306.187 1.8.113.55-.083 1.688-.69 1.925-1.357.238-.667.238-1.238.167-1.357-.07-.12-.262-.19-.547-.333z"></path></svg>
+                    Fazer Orçamento Grátis
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Authority Section (Perfil) -->
+<section class="bg-surface-container-low dark:bg-inverse-surface/30 py-16 md:py-24 transition-colors" id="experience">
+    <div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 relative group">
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary to-secondary-container dark:from-secondary dark:to-secondary-container rounded-2xl opacity-10 blur-xl group-hover:opacity-20 transition-opacity"></div>
+            <img alt="Guilherme Silva" class="relative w-full max-w-md mx-auto h-auto rounded-2xl shadow-level-2 border border-outline-variant/30 transition-all duration-500 hover:scale-[1.02]" src="profile.png">
+        </div>
+        <div class="lg:col-span-7 space-y-6">
+            <span class="font-bold text-xs uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim">Desenvolvedor & Estudante de Ciência da Computação</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface dark:text-inverse-on-surface">Guilherme Silva</h2>
+            <div class="font-display text-xl md:text-2xl font-bold text-secondary dark:text-secondary-fixed-dim">
+                Soluções de Software Eficientes, Inteligentes & Ágeis
+            </div>
+            <p class="text-lg text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed font-normal">
+                Focado no desenvolvimento de soluções completas que unem computação de alto desempenho, inteligência artificial integrada, mobilidade fluida e automações robustas. Combinando fundamentos acadêmicos sólidos com aplicações práticas do mundo real.
+            </p>
+            <div class="flex gap-4 pt-2">
+                <a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-all duration-300 hover:scale-105 p-3 bg-surface dark:bg-inverse-surface rounded-xl border border-outline-variant/20" href="https://www.linkedin.com/in/gui2761/" target="_blank" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                </a>
+                <a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-all duration-300 hover:scale-105 p-3 bg-surface dark:bg-inverse-surface rounded-xl border border-outline-variant/20" href="https://github.com/Gui2761" target="_blank" aria-label="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                </a>
+            </div>
+            
+            <!-- Cards de Diferenciais -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                <div class="bg-surface dark:bg-inverse-surface p-6 rounded-xl border border-outline-variant/20">
+                    <span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim text-3xl mb-2">auto_awesome_motion</span>
+                    <h4 class="font-bold text-on-surface dark:text-inverse-on-surface mb-1">Multiplataforma Nativo</h4>
+                    <p class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">Criação de aplicativos fantásticos com Flutter/Dart de alta performance visual.</p>
+                </div>
+                <div class="bg-surface dark:bg-inverse-surface p-6 rounded-xl border border-outline-variant/20">
+                    <span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim text-3xl mb-2">integration_instructions</span>
+                    <h4 class="font-bold text-on-surface dark:text-inverse-on-surface mb-1">Backends Escaláveis</h4>
+                    <p class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">APIs robustas com Python/FastAPI e ecossistemas modulares em Node.js.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Destaque Natan Construções Section -->
+<section class="px-margin-mobile md:px-gutter max-w-container-max mx-auto py-16 md:py-24" id="natan-construcoes">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6">
+            <span class="inline-flex items-center gap-2 bg-secondary/10 dark:bg-secondary-fixed-dim/10 text-secondary dark:text-secondary-fixed-dim px-3 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary dark:bg-secondary-fixed-dim"></span>
+                Caso de Sucesso
+            </span>
+            <h3 class="font-display text-3xl font-extrabold text-on-surface dark:text-inverse-on-surface leading-snug">
+                Projeto em Destaque: Natan Construções
+            </h3>
+            <p class="text-lg text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Desenvolvimento de um sistema sob medida e site corporativo integrado de alta performance para a Natan Construções. O sistema otimiza a logística de distribuição, gerencia parcerias sólidas com grandes fornecedores como a Votorantim Cimentos e automatiza o atendimento digital, gerando resultados operacionais concretos.
+            </p>
+            <div class="pt-2">
+                <a class="inline-flex items-center gap-2 text-secondary dark:text-secondary-fixed-dim font-bold text-base hover:text-on-secondary-fixed-variant dark:hover:text-secondary-fixed group transition-all" href="https://natanconstrucoes.com.br" target="_blank">
+                    Acessar Site Oficial
+                    <span class="material-symbols-outlined transform group-hover:translate-x-1.5 transition-transform text-xl">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+        <div class="lg:col-span-6 relative flex justify-center items-center p-12 bg-surface-container-low dark:bg-inverse-surface/10 border border-outline-variant/30 rounded-2xl shadow-level-2 min-h-[300px]">
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary/5 to-secondary-container/5 rounded-2xl blur-lg"></div>
+            <img alt="Natan Construções Logo" class="relative w-full max-w-xs h-auto dark:brightness-110 drop-shadow-md hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ug5n62jyfUijBh3EY4Mk5l0217488UiTj0FsY8jkEJx9OfC2MeR982r3PZFoBHZA4fJFHrF54lhKFgOTsXBT_Fqbbxp9t2-vmxFBMKrQUF6Ko9QDTsUzErXrBDnfcCZSAuPJCbWpyoT1Qos_RyhPfP-skeRsDXOOrXMgBiOH8fjaLDSOaNrVNMLNF273AHTh4WN3rBKWUBF7ajqSXh9XNRqeJ6H4_h3uIjicmYWO1Itp8uusK0GH2jWgapW">
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="bg-surface-container-highest dark:bg-inverse-surface/50 py-16 md:py-24 transition-colors" id="insights">
+    <div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+        <span class="block text-center text-xs font-bold uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim mb-4">TECNOLOGIAS E FERRAMENTAS</span>
+        <h3 class="font-display text-center text-3xl font-extrabold text-on-surface dark:text-inverse-on-surface mb-16">
+            Stack Tecnológica de Alta Performance
+        </h3>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-center items-center">
+            <!-- Tech 1 -->
+            <div class="flex flex-col items-center p-6 bg-surface dark:bg-tertiary-container rounded-2xl shadow-sm border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1">
+                <span class="material-symbols-outlined text-4xl text-secondary dark:text-secondary-fixed-dim mb-3">phone_iphone</span>
+                <span class="font-bold text-on-surface dark:text-inverse-on-surface">Flutter</span>
+            </div>
+            <!-- Tech 2 -->
+            <div class="flex flex-col items-center p-6 bg-surface dark:bg-tertiary-container rounded-2xl shadow-sm border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1">
+                <span class="material-symbols-outlined text-4xl text-secondary dark:text-secondary-fixed-dim mb-3">code</span>
+                <span class="font-bold text-on-surface dark:text-inverse-on-surface">Dart</span>
+            </div>
+            <!-- Tech 3 -->
+            <div class="flex flex-col items-center p-6 bg-surface dark:bg-tertiary-container rounded-2xl shadow-sm border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1">
+                <span class="material-symbols-outlined text-4xl text-secondary dark:text-secondary-fixed-dim mb-3">terminal</span>
+                <span class="font-bold text-on-surface dark:text-inverse-on-surface">Python</span>
+            </div>
+            <!-- Tech 4 -->
+            <div class="flex flex-col items-center p-6 bg-surface dark:bg-tertiary-container rounded-2xl shadow-sm border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1">
+                <span class="material-symbols-outlined text-4xl text-secondary dark:text-secondary-fixed-dim mb-3">api</span>
+                <span class="font-bold text-on-surface dark:text-inverse-on-surface">FastAPI</span>
+            </div>
+            <!-- Tech 5 -->
+            <div class="flex flex-col items-center p-6 bg-surface dark:bg-tertiary-container rounded-2xl shadow-sm border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1">
+                <span class="material-symbols-outlined text-4xl text-secondary dark:text-secondary-fixed-dim mb-3">javascript</span>
+                <span class="font-bold text-on-surface dark:text-inverse-on-surface">Node.js</span>
+            </div>
+            <!-- Tech 6 -->
+            <div class="flex flex-col items-center p-6 bg-surface dark:bg-tertiary-container rounded-2xl shadow-sm border border-outline-variant/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1">
+                <span class="material-symbols-outlined text-4xl text-secondary dark:text-secondary-fixed-dim mb-3">database</span>
+                <span class="font-bold text-on-surface dark:text-inverse-on-surface">SQLite</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="bg-inverse-surface dark:bg-inverse-surface py-20 text-center relative overflow-hidden">
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary/10 blur-3xl"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-secondary-container/10 blur-3xl"></div>
+    <div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto space-y-8 relative z-10">
+        <h2 class="font-display text-3xl md:text-5xl font-black text-surface-container-lowest max-w-3xl mx-auto leading-tight">
+            Pronto para tirar seu projeto do papel?
+        </h2>
+        <p class="text-lg text-inverse-primary max-w-2xl mx-auto leading-relaxed">
+            Desenvolva um site ou sistema sob medida para modernizar sua empresa, atrair mais clientes e automatizar seus processos.
+        </p>
+        <div class="pt-4">
+            <a href="https://wa.me/558281700692?text=Ol%C3%A1%20Guilherme!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20desenvolvimento%20de%20um%20site%2Fsistema%20para%20a%20minha%20empresa." target="_blank" class="bg-secondary text-on-secondary px-8 py-5 rounded-xl hover:bg-on-secondary-fixed-variant transition-all duration-300 font-bold text-lg inline-flex items-center gap-3 shadow-lg shadow-secondary/20 hover:scale-[1.02]">
+                Solicitar Orçamento Grátis
+                <span class="material-symbols-outlined">calendar_month</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-tertiary-container w-full py-12 border-t border-outline-variant/10 transition-colors" id="contact">
+    <div class="flex flex-col lg:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-8">
+        <div class="flex flex-col items-center lg:items-start gap-2">
+            <span class="font-display text-2xl font-black text-surface-container-lowest tracking-tight">
+                Guilherme<span class="text-secondary dark:text-secondary-fixed-dim"> Silva</span>
+            </span>
+            <p class="text-sm text-tertiary-fixed-dim max-w-xs text-center lg:text-left">Engenharia de Software de Alto Impacto e Conversão Estética.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+            <a class="text-tertiary-fixed-dim hover:text-secondary-fixed-dim transition-colors font-medium text-sm" href="privacy.html">Políticas de Privacidade</a>
+            <a class="text-tertiary-fixed-dim hover:text-secondary-fixed-dim transition-colors font-medium text-sm" href="terms.html">Termos de Uso</a>
+            <a class="text-tertiary-fixed-dim hover:text-secondary-fixed-dim transition-colors font-medium text-sm" href="#experience">Sobre</a>
+            <a class="text-tertiary-fixed-dim hover:text-secondary-fixed-dim transition-colors font-medium text-sm" href="#natan-construcoes">Caso de Sucesso</a>
+        </div>
+        <div class="flex gap-4">
+            <a class="text-tertiary-fixed-dim hover:text-secondary-fixed-dim hover:scale-110 transition-all p-2.5 bg-inverse-surface/80 dark:bg-inverse-surface/40 rounded-xl" href="https://www.linkedin.com/in/gui2761/" target="_blank" aria-label="LinkedIn">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+            <a class="text-tertiary-fixed-dim hover:text-secondary-fixed-dim hover:scale-110 transition-all p-2.5 bg-inverse-surface/80 dark:bg-inverse-surface/40 rounded-xl" href="https://github.com/Gui2761" target="_blank" aria-label="GitHub">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+            </a>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-gutter mt-8 pt-6 border-t border-outline-variant/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-tertiary-fixed-dim/60">
+        <div>
+            © 2026 Portfólio Guilherme Silva. Todos os direitos reservados.
+        </div>
+        <div>
+            Desenvolvido por Guilherme Silva.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Dark Mode Toggle Logic
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    const toggleBtnMobile = document.getElementById('dark-mode-toggle-mobile');
+    
+    function setDarkTheme(isDark) {
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+    
+    // Check initial theme
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    
+    if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
+        setDarkTheme(true);
+    } else {
+        setDarkTheme(false);
+    }
+    
+    toggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setDarkTheme(!isDark);
+    });
+    
+    toggleBtnMobile.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setDarkTheme(!isDark);
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenuBtn.innerHTML = isOpen ? '<span class="material-symbols-outlined">close</span>' : '<span class="material-symbols-outlined">menu</span>';
+    });
+    
+    // Close menu when clicking links
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+        });
+    });
+</script>
+
+</body>
+</html>
