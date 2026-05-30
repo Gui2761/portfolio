@@ -378,6 +378,12 @@
                         </div>
                     </div>
                     <div class="flex gap-3 items-start p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/20">
+                        <span class="px-2 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs rounded border border-emerald-500/20 uppercase">PAGO</span>
+                        <div class="text-xs md:text-sm">
+                            <strong>Financeiro Confirmado:</strong> O pagamento via Pix, cartão ou outro método foi verificado e aprovado pelo setor financeiro. A carga está 100% liberada para despacho.
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/20">
                         <span class="px-2 py-1 bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold text-xs rounded border border-blue-500/20 uppercase">SAIU PARA ENTREGA</span>
                         <div class="text-xs md:text-sm">
                             <strong>Carga em Trânsito:</strong> A carga foi despachada no caminhão da empresa ou está pronta para retirada imediata pelo cliente na loja.
@@ -549,7 +555,8 @@
                         <li><strong>1. No Checkout:</strong> Ao clicar em "Confirmar Pedido", a requisição é gravada instantaneamente no banco de dados como <code class="font-mono text-xs bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 px-1 py-0.5 rounded">PROCESSANDO</code>.</li>
                         <li><strong>2. Dedução de Estoque Automática:</strong> A API do sistema varre imediatamente todos os itens incluídos na transação e subtrai as respectivas frações compradas do banco de estoque de cada material correspondente.</li>
                         <li><strong>3. Formalização no WhatsApp:</strong> O celular ou computador do cliente abre o WhatsApp carregando uma mensagem estruturada com detalhes completos da compra (ID, frete, endereço, e a indicação de cupom de porcentagem ou frete grátis aplicado).</li>
-                        <li><strong>4. Emissão de NF:</strong> O administrador imprime o comprovante auxiliar direto no painel e envia a carga.</li>
+                        <li><strong>4. Confirmação do Pagamento:</strong> Após validar o recebimento do Pix ou aprovação do cartão pelo atendimento do WhatsApp, o administrador altera o status do pedido para <code class="font-mono text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-1 py-0.5 rounded">PAGO</code> no painel.</li>
+                        <li><strong>5. Emissão de NF & Expedição:</strong> O administrador imprime o recibo de entrega/Nota Fiscal auxiliar direto no painel e libera o envio físico dos materiais.</li>
                     </ul>
                 </div>
 
