@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Manual do Ecossistema - Portal & Intranet ITPS | Guilherme Silva</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#213145",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline": "#76777d",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-container": "#818486",
+                        "tertiary-container": "#191c1e",
+                        "on-primary-container": "#7c839b",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary": "#000000",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-container": "#00714d",
+                        "outline-variant": "#c6c6cd",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-tint": "#565e74",
+                        "on-background": "#0b1c30",
+                        "primary-container": "#131b2e",
+                        "surface-container-low": "#eff4ff",
+                        "secondary": "#006c49",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#002113",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-container": "#6cf8bb",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface-variant": "#45464d",
+                        "secondary-fixed": "#6ffbbe"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background-color: rgba(248, 249, 255, 0.75);
+            backdrop-filter: blur(20px);
+        }
+        .dark .glass-nav {
+            background-color: rgba(33, 49, 69, 0.75);
+        }
+        .dark .text-on-surface-variant,
+        .dark .text-on-tertiary-fixed-variant {
+            color: #cbd5e1 !important;
+        }
+        .dark .text-on-surface,
+        .dark .text-inverse-on-surface,
+        .dark h1, .dark h2, .dark h3, .dark h4, .dark span.font-bold {
+            color: #f8fafc !important;
+        }
+        section {
+            scroll-margin-top: 7.5rem; /* 120px - perfect spacing below header */
+        }
+        html {
+            scroll-padding-top: 7.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-sans antialiased pt-20 transition-colors duration-300 dark:bg-tertiary-container dark:text-inverse-on-surface">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+    <div class="flex justify-between items-center h-20 px-6 max-w-[1200px] mx-auto">
+        <a href="index.html" class="font-display text-2xl font-black tracking-tight text-on-surface dark:text-inverse-on-surface hover:text-secondary transition-colors">
+            Guilherme<span class="text-secondary dark:text-secondary-fixed-dim"> Silva</span>
+        </a>
+        <div class="flex gap-6 items-center">
+            <a class="font-medium text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary transition-colors" href="index.html">Voltar ao Início</a>
+            <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors dark:hover:bg-inverse-surface/50 text-on-surface dark:text-inverse-on-surface" aria-label="Alternar Tema">
+                <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+                <span class="material-symbols-outlined hidden dark:block text-secondary-fixed-dim">light_mode</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Container -->
+<div class="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="lg:col-span-3 space-y-4">
+        <div class="sticky top-28 bg-surface-container-low dark:bg-inverse-surface/10 p-6 rounded-2xl border border-outline-variant/20 space-y-4 shadow-sm">
+            <h4 class="font-display font-bold text-on-surface dark:text-inverse-on-surface text-sm uppercase tracking-wider">Manual do Sistema</h4>
+            <nav class="flex flex-col gap-1.5">
+                <a href="#intro" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">info</span> 1. Introdução
+                </a>
+                <a href="#robot" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">smart_toy</span> 2. Robô Leitor (D.O.)
+                </a>
+                <a href="#noticias" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">newspaper</span> 3. Notícias & CMS
+                </a>
+                <a href="#folha" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">payments</span> 4. Folha de Pagamento
+                </a>
+                <a href="#contratos" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">description</span> 5. Gestão de Contratos
+                </a>
+                <a href="#seguranca" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">security</span> 6. Níveis de Acesso
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Docs Content -->
+    <main class="lg:col-span-9 space-y-16">
+        
+        <!-- Header -->
+        <header class="space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Especificações Técnicas Governamentais</span>
+            <h1 class="font-display text-4xl md:text-5xl font-black text-on-surface dark:text-inverse-on-surface leading-tight">
+                Manual do Portal & Intranet ITPS
+            </h1>
+            <p class="text-lg text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Documentação técnica mapeando a infraestrutura pública e intranet administrativa do **Instituto de Tecnologia e Pesquisa de Sergipe (ITPS)**, detalhando os robôs de automação e as telas de operações de RH e Financeiro.
+            </p>
+        </header>
+
+        <!-- 1. Introdução -->
+        <section id="intro" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">info</span> 1. Introdução ao Ecossistema ITPS
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                O ecossistema do ITPS consiste em uma **arquitetura de alto impacto governamental** que integra o portal oficial público ao sistema administrativo de uso interno da autarquia. A solução visa desburocratizar a gestão de servidores, assegurar a conformidade jurídica de contratos públicos e trazer transparência por meio de rotinas automatizadas por IA e web scraping.
+            </p>
+        </section>
+
+        <!-- 2. Robô Leitor -->
+        <section id="robot" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">smart_toy</span> 2. Robô do Diário Oficial (Web Scraper Bot)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Uma automação robótica desenvolvida em Python que monitora e extrai informações oficiais diariamente, reduzindo de horas para segundos o tempo de triagem jurídica.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Rotina de Raspagem:</strong> O bot inicia-se de forma agendada nas primeiras horas do dia, mapeando os servidores estaduais e baixando as edições mais recentes do Diário Oficial do Estado (DOE).</li>
+                <li><strong>Busca Semântica:</strong> Realiza uma varredura de strings de alta precisão buscando por termos estruturados como <code>"ITPS"</code>, <code>"Instituto de Tecnologia e Pesquisa"</code>, números de portarias e nomes de servidores.</li>
+                <li><strong>Gatilho de Notificação:</strong> Caso o termo seja encontrado, a API gera uma notificação interna no painel da Procuradoria Jurídica do ITPS contendo o parágrafo da citação, link de download do diário e anexa o documento recortado.</li>
+            </ul>
+        </section>
+
+        <!-- 3. Notícias & CMS -->
+        <section id="noticias" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">newspaper</span> 3. Portal Público e Gerenciador de Conteúdo (CMS)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Interface de comunicação oficial com a população sergipana. Permite a divulgação de laudos, pesquisas científicas e notícias de utilidade pública de forma ágil e otimizada para SEO.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Carrossel Dinâmico:</strong> Slides rotativos panorâmicos configuráveis diretamente pelo painel administrativo para notícias de alta prioridade.</li>
+                <li><strong>Repositório de Pesquisas:</strong> Módulo de indexação de laudos analíticos e pesquisas tecnológicas públicas com suporte a anexos em PDF e filtros rápidos por departamento científico.</li>
+            </ul>
+        </section>
+
+        <!-- 4. Folha de Pagamento -->
+        <section id="folha" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">payments</span> 4. Módulo de Folha de Pagamento (Intranet)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                O módulo de Folha de Pagamento é o núcleo de gestão orçamentária de pessoal do RH do ITPS. Ele processa todas as remunerações dos servidores de forma 100% digital e segura.
+            </p>
+
+            <div class="space-y-4">
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Telas e Visões Operacionais:</h3>
+                
+                <div class="space-y-4">
+                    <!-- Screen 1 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">admin_panel_settings</span> 1. Tela do Gestor de RH (Processamento de Folha)
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            Painel completo contendo a listagem geral de servidores ativos (Efetivos, Cargos Comissionados e Bolsistas Científicos). 
+                        </p>
+                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
+                            <li><strong>Função Importar Ponto:</strong> Conecta e valida a carga horária e faltas vindas do sistema biométrico de catracas.</li>
+                            <li><strong>Função Configurar Vencimentos:</strong> Permite cadastrar salários-base de novos cargos ou reajustes salariais de servidores.</li>
+                            <li><strong>Alíquotas e Tributos Legais:</strong> Campos para ajustar teto de cálculo do Imposto de Renda Retido na Fonte (IRRF), taxas do INSS e previdência estadual (Iprev).</li>
+                            <li><strong>Botão "Fechar Folha":</strong> Ao ser clicado, processa em lote o contracheque de todos os servidores ativos, gerando o arquivo remessa bancária.</li>
+                        </div>
+                    </div>
+
+                    <!-- Screen 2 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">badge</span> 2. Painel Pessoal do Servidor (Contracheque Digital)
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            Tela simplificada e amigável onde o funcionário consulta seus rendimentos de forma rápida e autônoma, dispensando solicitações físicas ao RH.
+                        </p>
+                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
+                            <li><strong>Filtro Histórico:</strong> Seleção rápida por Ano e Mês de exercício.</li>
+                            <li><strong>Demonstrativo de Vencimentos:</strong> Exibe com clareza as colunas de Proventos (salário, gratificação de titulação, insalubridade de laboratório) e Descontos (previdência, imposto de renda, faltas, consignados).</li>
+                            <li><strong>Exportação Segura:</strong> Botão de download do contracheque digital em formato PDF assinado eletronicamente via certificados públicos do ITPS.</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4 pt-4">
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Regras de Negócio e Cálculos Automatizados:</h3>
+                <div class="overflow-x-auto rounded-xl border border-outline-variant/30 bg-surface-container-lowest dark:bg-inverse-surface/5">
+                    <table class="min-w-full divide-y divide-outline-variant/20 text-left text-xs md:text-sm text-on-surface dark:text-inverse-on-surface">
+                        <thead class="bg-surface-container dark:bg-inverse-surface/35 font-bold uppercase text-xs">
+                            <tr>
+                                <th class="px-4 py-3">Cálculo/Métrica</th>
+                                <th class="px-4 py-3">Gatilho / Condição</th>
+                                <th class="px-4 py-3">Ação Operacional do Sistema</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/10 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                            <tr>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Gratificação de Titulação</td>
+                                <td class="px-4 py-3">Conclusão de Especialização (15%), Mestrado (25%) ou Doutorado (40%).</td>
+                                <td class="px-4 py-3">Aumenta proporcionalmente o valor bruto da remuneração com base no salário-base após validação do diploma pelo RH.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Insalubridade Técnica</td>
+                                <td class="px-4 py-3">Servidores alocados em laboratórios de análises químicas, físicas ou de solo.</td>
+                                <td class="px-4 py-3">Soma ao vencimento um percentual configurado (10%, 20% ou 40%) sobre o salário-base conforme laudo do setor de segurança do trabalho.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Dedução de Faltas</td>
+                                <td class="px-4 py-3">Ausência não justificada detectada na importação biométrica do ponto.</td>
+                                <td class="px-4 py-3">Cálculo de desconto financeiro diário equivalente a 1/30 avos do salário por dia faltoso.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Gestão de Contratos -->
+        <section id="contratos" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">description</span> 5. Módulo de Gestão de Contratos e Convênios (Intranet)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Caminho no painel: <code class="bg-surface-container px-1.5 py-0.5 rounded text-secondary dark:bg-inverse-surface/20 font-mono text-sm">/admin/contratos</code>
+                <br>Gerencia a saúde jurídica e orçamentária dos convênios tecnológicos e compras públicas com fornecedores de laboratórios de precisão do ITPS.
+            </p>
+
+            <div class="space-y-4">
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Telas e Visões Operacionais:</h3>
+                
+                <div class="space-y-4">
+                    <!-- Contract Screen 1 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">border_color</span> 1. Tela de Cadastro de Contratos & Aditivos
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            Formulário unificado para lançar as diretrizes orçamentárias e fiscais do contrato governamental assinado.
+                        </p>
+                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
+                            <li><strong>Identificação Técnica:</strong> Número do contrato/licitação, Razão Social do fornecedor, CNPJ de destino e objeto licitado.</li>
+                            <li><strong>Valores e Saldos:</strong> Valor total empenhado, valor da parcela mensal e dotação orçamentária vinculada.</li>
+                            <li><strong>Vigência e Assinatura:</strong> Calendários para registrar Data de Assinatura, Início da Execução e Fim da Vigência do documento.</li>
+                            <li><strong>Gerenciador de Aditivos:</strong> Tela flutuante acoplada ao contrato-mãe para cadastrar termos aditivos de prorrogação de prazo ou acréscimos/supressões de valor (limite legal de 25%).</li>
+                        </div>
+                    </div>
+
+                    <!-- Contract Screen 2 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">ring_volume</span> 2. Painel Monitor e Alerta de Vencimentos (Semáforo Inteligente)
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            Tela centralizadora que atua como sentinela orçamentária para a equipe jurídica, evitando a perda de prazos de rescisões ou prorrogações.
+                        </p>
+                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-2">
+                            <div class="flex gap-2 items-center">
+                                <span class="w-3.5 h-3.5 rounded-full bg-green-500 block"></span>
+                                <span><strong>Verde (Vigência Saudável):</strong> Contratos com mais de 90 dias restantes para vencimento. Nenhuma ação é necessária.</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <span class="w-3.5 h-3.5 rounded-full bg-yellow-500 block animate-pulse"></span>
+                                <span><strong>Amarelo (Atenção RH/Jurídico):</strong> Vigência entre 60 e 90 dias restantes. O sistema dispara e-mails preventivos para as partes interessadas solicitando relatórios de metas.</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <span class="w-3.5 h-3.5 rounded-full bg-red-500 block"></span>
+                                <span><strong>Vermelho (Risco de Multa/Prejuízo):</strong> Menos de 30 dias para expirar ou contrato oficialmente vencido. O painel emite alertas sonoros e notifica a diretoria para ação corretiva urgente.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4 pt-4">
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Regras de Negócio e Segurança de Vigência:</h3>
+                <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <li><strong>Travamento de Aditivos Fiscais:</strong> O sistema impossibilita de forma programática a inserção de aditivos financeiros que extrapolem **25%** do valor original do contrato, de acordo com as leis de licitação vigentes no país.</li>
+                    <li><strong>Alerta Automatizado por E-mail:</strong> Um serviço rodando em segundo plano verifica os prazos à meia-noite e envia e-mails contendo o PDF do contrato e justificativa para a Procuradoria Jurídica do ITPS nos estágios amarelo e vermelho.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. Segurança -->
+        <section id="seguranca" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">security</span> 6. Níveis de Acesso e Segurança (RBAC)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Toda a intranet está blindada contra vazamentos de informações sensíveis (como dados de vencimento de folha de pagamento de servidores) seguindo as premissas da LGPD.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Diretoria Geral:</strong> Acesso total de leitura e geração de relatórios de auditoria financeira gerais de folha e contratos públicos.</li>
+                <li><strong>Setor de RH:</strong> Acesso de escrita e edição para a Folha de Pagamento. Bloqueados nos painéis de aditivos orçamentários do setor jurídico.</li>
+                <li><strong>Procuradoria Jurídica:</strong> Permissão de edição e controle de contratos, termos aditivos e semáforo de vigência. Bloqueados nos painéis de processamento bancário da folha de pagamento.</li>
+            </ul>
+        </section>
+        
+    </main>
+</div>
+
+<footer class="bg-inverse-surface dark:bg-tertiary-container w-full py-8 border-t border-outline-variant/10 text-center text-xs text-tertiary-fixed-dim/60 transition-colors">
+    <p>© 2026 Portfólio Guilherme Silva. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // Dark Mode Toggle Logic
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    function setDarkTheme(isDark) {
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
+        setDarkTheme(true);
+    } else {
+        setDarkTheme(false);
+    }
+    toggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setDarkTheme(!isDark);
+    });
+
+    // Sidebar active item highlights on scroll
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 120)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('bg-secondary/10', 'text-secondary');
+            if (item.getAttribute('href').slice(1) === current) {
+                item.classList.add('bg-secondary/10', 'text-secondary');
+            }
+        });
+    });
+</script>
+</body>
+</html>
