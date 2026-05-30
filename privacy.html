@@ -87,6 +87,17 @@
         .dark .glass-nav {
             background-color: rgba(33, 49, 69, 0.75);
         }
+        
+        /* High contrast dark mode typography overrides */
+        .dark .text-on-surface-variant,
+        .dark .text-on-tertiary-fixed-variant {
+            color: #cbd5e1 !important; /* light slate-300 */
+        }
+        .dark .text-on-surface,
+        .dark .text-inverse-on-surface,
+        .dark h1, .dark h2, .dark h3, .dark h4, .dark span.font-bold {
+            color: #f8fafc !important; /* bright slate-50 */
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-sans antialiased pt-20 transition-colors duration-300 dark:bg-tertiary-container dark:text-inverse-on-surface">
