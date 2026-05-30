@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Manual do Ecossistema - Natan Construções | Guilherme Silva</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-surface": "#213145",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline": "#76777d",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-container": "#818486",
+                        "tertiary-container": "#191c1e",
+                        "on-primary-container": "#7c839b",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary": "#000000",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-container": "#00714d",
+                        "outline-variant": "#c6c6cd",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-tint": "#565e74",
+                        "on-background": "#0b1c30",
+                        "primary-container": "#131b2e",
+                        "surface-container-low": "#eff4ff",
+                        "secondary": "#006c49",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#002113",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-container": "#6cf8bb",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface-variant": "#45464d",
+                        "secondary-fixed": "#6ffbbe"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Montserrat", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background-color: rgba(248, 249, 255, 0.75);
+            backdrop-filter: blur(20px);
+        }
+        .dark .glass-nav {
+            background-color: rgba(33, 49, 69, 0.75);
+        }
+        .dark .text-on-surface-variant,
+        .dark .text-on-tertiary-fixed-variant {
+            color: #cbd5e1 !important;
+        }
+        .dark .text-on-surface,
+        .dark .text-inverse-on-surface,
+        .dark h1, .dark h2, .dark h3, .dark h4, .dark span.font-bold {
+            color: #f8fafc !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-sans antialiased pt-20 transition-colors duration-300 dark:bg-tertiary-container dark:text-inverse-on-surface">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+    <div class="flex justify-between items-center h-20 px-6 max-w-[1200px] mx-auto">
+        <a href="index.html" class="font-display text-2xl font-black tracking-tight text-on-surface dark:text-inverse-on-surface hover:text-secondary transition-colors">
+            Guilherme<span class="text-secondary dark:text-secondary-fixed-dim"> Silva</span>
+        </a>
+        <div class="flex gap-6 items-center">
+            <a class="font-medium text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-secondary transition-colors" href="index.html">Voltar ao Início</a>
+            <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-surface-container transition-colors dark:hover:bg-inverse-surface/50 text-on-surface dark:text-inverse-on-surface" aria-label="Alternar Tema">
+                <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+                <span class="material-symbols-outlined hidden dark:block text-secondary-fixed-dim">light_mode</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Container -->
+<div class="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="lg:col-span-3 space-y-4">
+        <div class="sticky top-28 bg-surface-container-low dark:bg-inverse-surface/10 p-6 rounded-2xl border border-outline-variant/20 space-y-4 shadow-sm">
+            <h4 class="font-display font-bold text-on-surface dark:text-inverse-on-surface text-sm uppercase tracking-wider">Manual do Sistema</h4>
+            <nav class="flex flex-col gap-2">
+                <a href="#intro" class="nav-item flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-xl">info</span> Introdução
+                </a>
+                <a href="#dashboard" class="nav-item flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-xl">dashboard</span> Dashboard
+                </a>
+                <a href="#produtos" class="nav-item flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-xl">shopping_bag</span> Produtos
+                </a>
+                <a href="#categorias" class="nav-item flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-xl">category</span> Categorias
+                </a>
+                <a href="#pedidos" class="nav-item flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-xl">receipt_long</span> Pedidos
+                </a>
+                <a href="#banners" class="nav-item flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-xl">view_carousel</span> Banners da Home
+                </a>
+                <a href="#cupons" class="nav-item flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-xl">local_activity</span> Cupons
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Docs Content -->
+    <main class="lg:col-span-9 space-y-16">
+        
+        <!-- Header -->
+        <header class="space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Case Study & Documentação</span>
+            <h1 class="font-display text-4xl md:text-5xl font-black text-on-surface dark:text-inverse-on-surface leading-tight">
+                Manual do Ecossistema Natan Construções
+            </h1>
+            <p class="text-lg text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Este é o documento oficial que mapea todo o funcionamento do ecossistema inteligente que desenvolvi para a Natan Construções, cobrindo o painel administrativo avançado e as regras de negócio de ponta a ponta.
+            </p>
+        </header>
+
+        <!-- Intro -->
+        <section id="intro" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">info</span> 1. Introdução ao Ecossistema
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                O sistema da **Natan Construções** é uma plataforma moderna de e-commerce e catálogo digital blindada com **validação de estoque em tempo real**, **fechamento de pedidos automatizado via WhatsApp** e um **painel administrativo completo** com controle financeiro avançado. Desenvolvido para oferecer máxima performance, flexibilidade de banners e gestão eficiente.
+            </p>
+        </section>
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">dashboard</span> 2. Dashboard Geral (Painel de Vendas)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                O Painel de Controle inicial oferece ao administrador métricas financeiras atualizadas em tempo real sobre a saúde comercial do estúdio.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Métricas Cruciais:</strong> Faturamento total acumulado, contagem de vendas no dia e ticket médio.</li>
+                <li><strong>Relatório PDF Exclusivo:</strong> Geração de demonstrativos de lucro, custos e faturamento exportáveis para reuniões corporativas.</li>
+                <li><strong>Monitor de Volume Semanal:</strong> Gráfico dinâmico mapeando a performance operacional.</li>
+            </ul>
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-4 rounded-2xl border border-outline-variant/30">
+                <img src="natan_dashboard.png" alt="Painel de Controle Dashboard" class="w-full h-auto rounded-xl shadow-md border border-outline-variant/20">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Interface administrativa do Painel de Controle Financeiro.</p>
+            </div>
+        </section>
+
+        <!-- Produtos -->
+        <section id="produtos" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">shopping_bag</span> 3. Gestão de Produtos (Cadastro e Estoque)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Controle integral dos materiais disponíveis no estoque com validações nativas contra erros de digitação e travamento operacional automático.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Cadastro Técnico Completo:</strong> Definição de nome, categoria, preço base de venda, preço de custo interno, desconto promocional e peso físico.</li>
+                <li><strong>Galeria Drag & Drop:</strong> Upload facilitado arrastando imagens diretamente para a área dropzone.</li>
+                <li><strong>Garantia de Sincronia:</strong> O sistema impossibilita que o cliente final adquira um volume maior de itens do que o disponível no estoque físico catalogado.</li>
+            </ul>
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-4 rounded-2xl border border-outline-variant/30">
+                <img src="natan_produtos.png" alt="Cadastro e Gestão de Produtos" class="w-full h-auto rounded-xl shadow-md border border-outline-variant/20">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Formulário avançado de cadastro técnico de materiais.</p>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section id="categorias" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">category</span> 4. Gestão de Categorias e Departamentos
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Estruturação e organização modular de departamentos de produtos para otimizar a experiência de navegação do usuário final.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Departamentos Dinâmicos:</strong> Criação, edição e exclusão de categorias principais (ex: Cimento, Ferramentas, Pisos, Tintas).</li>
+                <li><strong>Contador de Itens Vinculados:</strong> Informação visual direta sobre quantos produtos estão atribuídos a cada departamento antes de realizar alterações.</li>
+            </ul>
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-4 rounded-2xl border border-outline-variant/30">
+                <img src="natan_categorias.png" alt="Gestão de Categorias" class="w-full h-auto rounded-xl shadow-md border border-outline-variant/20">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Painel de gerenciamento e vinculação de departamentos.</p>
+            </div>
+        </section>
+
+        <!-- Pedidos -->
+        <section id="pedidos" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">receipt_long</span> 5. Monitor de Pedidos e Disparos WhatsApp
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Central de triagem de compras que automatiza toda a comunicação comercial com os clientes finais enviando notificações de status integradas.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Filtragem por Status:</strong> Triagem rápida de itens processando, pagos, despachados ou entregues.</li>
+                <li><strong>Disparos Automáticos de Status:</strong> O sistema gera mensagens limpas e compatíveis prontas para envio automático no WhatsApp do cliente com o status atualizado do pedido.</li>
+                <li><strong>Logística e Notas:</strong> Atalhos de visualização de endereço detalhado e emissão de notas fiscais em PDF.</li>
+            </ul>
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-4 rounded-2xl border border-outline-variant/30">
+                <img src="natan_pedidos.png" alt="Gestão de Pedidos Administrativos" class="w-full h-auto rounded-xl shadow-md border border-outline-variant/20">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Mapeamento e acompanhamento de status de vendas.</p>
+            </div>
+        </section>
+
+        <!-- Banners -->
+        <section id="banners" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">view_carousel</span> 6. Gestão de Banners (Alinhamento e Live Mockup)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Painel visual inovador que permite customizar os banners rotativos no topo do site oficial de forma dinâmica e com pré-visualização instantânea.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Mockup ao Vivo (Prévia):</strong> Simulador idêntico à tela do cliente que se atualiza a cada tecla digitada antes de persistir no banco de dados.</li>
+                <li><strong>Controle de Foco Visual (Alinhamento):</strong> Ajuste inteligente de corte de imagem (topo, base, centralizado) para garantir que a foto nunca corte em telas menores.</li>
+            </ul>
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-4 rounded-2xl border border-outline-variant/30">
+                <img src="natan_banners.png" alt="Gestão de Banners com Mockup Live" class="w-full h-auto rounded-xl shadow-md border border-outline-variant/20">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Painel de gerenciamento de banners com prévia interativa.</p>
+            </div>
+        </section>
+
+        <!-- Cupons -->
+        <section id="cupons" class="space-y-6">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">local_activity</span> 7. Gerenciador de Cupons e Promoções
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Módulo completo para controle de cupons promocionais para alavancar a retenção de clientes.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                <li><strong>Tipos de Cupons Flexíveis:</strong> Porcentagem de desconto direto no subtotal e frete grátis habilitado na entrega.</li>
+                <li><strong>Gatilhos Rápidos:</strong> Painel que permite criar, listar e excluir códigos promocionais com datas de expiração integradas.</li>
+            </ul>
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-4 rounded-2xl border border-outline-variant/30">
+                <img src="natan_cupons.png" alt="Gestão de Cupons Promocionais" class="w-full h-auto rounded-xl shadow-md border border-outline-variant/20">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Painel de configuração de cupons ativos.</p>
+            </div>
+        </section>
+        
+    </main>
+</div>
+
+<footer class="bg-inverse-surface dark:bg-tertiary-container w-full py-8 border-t border-outline-variant/10 text-center text-xs text-tertiary-fixed-dim/60 transition-colors">
+    <p>© 2026 Portfólio Guilherme Silva. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // Dark Mode Toggle Logic
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    function setDarkTheme(isDark) {
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
+        setDarkTheme(true);
+    } else {
+        setDarkTheme(false);
+    }
+    toggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setDarkTheme(!isDark);
+    });
+
+    // Sidebar active item highlights on scroll
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 120)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('bg-secondary/10', 'text-secondary');
+            if (item.getAttribute('href').slice(1) === current) {
+                item.classList.add('bg-secondary/10', 'text-secondary');
+            }
+        });
+    });
+</script>
+</body>
+</html>
