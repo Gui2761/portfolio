@@ -171,6 +171,11 @@
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
                 O <strong>Gestor Gado</strong> é uma plataforma pecuária desenvolvida especificamente para operar em áreas remotas e sem sinal de internet (100% offline). O sistema é estruturado sobre um banco de dados local SQLite, garantindo controle logístico, sanitário e financeiro diretamente nas mãos do produtor rural.
             </p>
+
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-6 rounded-2xl border border-outline-variant/30 mt-6 flex flex-col items-center">
+                <img src="../assets/gado_painel.png" alt="Painel de Gestão e Composição do Rebanho" class="max-w-[280px] w-full h-auto rounded-3xl shadow-lg border border-outline-variant/20 hover:scale-[1.02] transition-transform duration-300">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Dashboard Principal (Painel de Gestão) com gráficos de composição do rebanho e fluxo de caixa.</p>
+            </div>
         </section>
 
         <!-- 2. Cadastro de Animais -->
@@ -235,6 +240,11 @@
                 <li><strong>Gatilho Automático de Venda:</strong> <strong>Regra de Negócio Crucial:</strong> No cadastro do animal, se o status do bovino for alterado para <code>Vendido</code>, o formulário abre um campo obrigatório para digitar o Valor da Venda. Ao salvar, o sistema insere automaticamente uma nova transação financeira de <code>ENTRADA</code> no caixa geral com a descrição <em>"Venda Boi [Nº Brinco]"</em> e vincula o ID do animal.</li>
                 <li><strong>Devolução ao Caixa por Cancelamento:</strong> Caso o administrador edite o animal novamente e reverta o status de "Vendido" para "Ativo" (corrigindo um erro), o sistema deleta a transação financeira vinculada de forma autônoma.</li>
             </ul>
+
+            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-6 rounded-2xl border border-outline-variant/30 mt-6 flex flex-col items-center">
+                <img src="../assets/gado_financeiro.png" alt="Módulo Financeiro e Fluxo de Caixa" class="max-w-[280px] w-full h-auto rounded-3xl shadow-lg border border-outline-variant/20 hover:scale-[1.02] transition-transform duration-300">
+                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Módulo de Gestão Financeira com detalhamento de receitas e despesas.</p>
+            </div>
         </section>
 
         <!-- 5. Backup -->
