@@ -395,26 +395,55 @@
         setDarkTheme(!isDark);
     });
 
-    // Sidebar active item highlights on scroll
+    // Sidebar active item highlights using modern IntersectionObserver
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-item');
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 120)) {
-                current = section.getAttribute('id');
-            }
-        });
+    let activeSectionId = 'intro';
 
+    const updateActiveItem = (id) => {
         navItems.forEach(item => {
             item.classList.remove('bg-secondary/10', 'text-secondary');
-            if (item.getAttribute('href').slice(1) === current) {
+            if (item.getAttribute('href').slice(1) === id) {
                 item.classList.add('bg-secondary/10', 'text-secondary');
             }
         });
+    };
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-15% 0px -45% 0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                activeSectionId = entry.target.getAttribute('id');
+                // Highlight active item if not at the very top or bottom thresholds
+                const scrollPos = window.scrollY;
+                const totalHeight = document.documentElement.scrollHeight;
+                if (scrollPos > 50 && scrollPos + window.innerHeight < totalHeight - 100) {
+                    updateActiveItem(activeSectionId);
+                }
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Handle scroll boundary edges (Top and Bottom)
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const scrollHeight = document.documentElement.scrollHeight;
+
+        if (scrollPosition <= 80) {
+            updateActiveItem('intro');
+        } else if (scrollPosition + windowHeight >= scrollHeight - 80) {
+            const lastSectionId = sections[sections.length - 1].getAttribute('id');
+            updateActiveItem(lastSectionId);
+        }
     });
 </script>
 </body>
