@@ -219,7 +219,7 @@
                 <span class="material-symbols-outlined text-secondary">payments</span> 4. Módulo de Folha de Pagamento (Intranet)
             </h2>
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                O módulo de Folha de Pagamento é o núcleo de gestão orçamentária de pessoal do RH do ITPS. Ele processa todas as remunerações dos servidores de forma 100% digital e segura.
+                Desenvolvido como um **Aplicativo Mobile nativo em Flutter (Dart)**, este módulo permite ao setor de RH e Financeiro gerenciar as folhas de pagamentos de estagiários e funcionários de forma automatizada, abandonando planilhas manuais.
             </p>
 
             <div class="space-y-4">
@@ -229,32 +229,15 @@
                     <!-- Screen 1 -->
                     <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
                         <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">admin_panel_settings</span> 1. Tela do Gestor de RH (Processamento de Folha)
+                            <span class="material-symbols-outlined text-lg">admin_panel_settings</span> 1. Painel Administrativo de Recursos Humanos (Flutter Mobile)
                         </h4>
                         <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Painel completo contendo a listagem geral de servidores ativos (Efetivos, Cargos Comissionados e Bolsistas Científicos) conectado ao novo banco **PostgreSQL centralizado** sob o schema relacional <code>folha</code>.
+                            Tela simplificada para o operador do RH cadastrar, editar e excluir funcionários/estagiários, com persistência relacional off-line em banco de dados **SQLite local** gerido por <code>database_helper.dart</code>.
                         </p>
                         <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
-                            <li><strong>APIs RESTful CRUD (FastAPI):</strong> Endpoint persistentes e validados para inserção, edição e exclusão de dados dos servidores diretamente no PostgreSQL.</li>
-                            <li><strong>Função Importar Ponto:</strong> Conecta e valida a carga horária e faltas vindas do sistema biométrico de catracas.</li>
-                            <li><strong>Função Configurar Vencimentos:</strong> Permite cadastrar salários-base de novos cargos ou reajustes salariais de servidores.</li>
-                            <li><strong>Alíquotas e Tributos Legais:</strong> Campos para ajustar teto de cálculo do Imposto de Renda Retido na Fonte (IRRF), taxas do INSS e previdência estadual (Iprev).</li>
-                            <li><strong>Botão "Fechar Folha":</strong> Ao ser clicado, processa em lote o contracheque de todos os servidores ativos, gerando o arquivo remessa bancária.</li>
-                        </div>
-                    </div>
-
-                    <!-- Screen 2 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">badge</span> 2. Painel Pessoal do Servidor (Contracheque Digital)
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Tela simplificada e amigável onde o funcionário consulta seus rendimentos de forma rápida e autônoma, dispensando solicitações físicas ao RH.
-                        </p>
-                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
-                            <li><strong>Filtro Histórico:</strong> Seleção rápida por Ano e Mês de exercício.</li>
-                            <li><strong>Demonstrativo de Vencimentos:</strong> Exibe com clareza as colunas de Proventos (salário, gratificação de titulação, insalubridade de laboratório) e Descontos (previdência, imposto de renda, faltas, consignados).</li>
-                            <li><strong>Exportação Segura:</strong> Botão de download do contracheque digital em formato PDF assinado eletronicamente via certificados públicos do ITPS.</li>
+                            <li><strong>Calculadora de Taxas Integrada (Dart):</strong> Módulo <code>calculadora_taxas.dart</code> que executa as regras matemáticas complexas sobre o vencimento de forma pioneira e instantânea.</li>
+                            <li><strong>Armazenamento SQLite Offline:</strong> Histórico de pagamentos e alíquotas salvos de forma rápida e segura localmente no dispositivo.</li>
+                            <li><strong>Gerador de Holerites em PDF:</strong> Botão integrado que utiliza o arquivo <code>gerador_pdf.dart</code> para exportar contracheques organizados com cabeçalho ITPS.</li>
                         </div>
                     </div>
                 </div>
@@ -273,19 +256,24 @@
                         </thead>
                         <tbody class="divide-y divide-outline-variant/10 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
                             <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Gratificação de Titulação</td>
-                                <td class="px-4 py-3">Conclusão de Especialização (15%), Mestrado (25%) ou Doutorado (40%).</td>
-                                <td class="px-4 py-3">Aumenta proporcionalmente o valor bruto da remuneração com base no salário-base após validação do diploma pelo RH.</td>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Encontro de Contas SIPES</td>
+                                <td class="px-4 py-3">Soma do vencimento governamental SIPES ao valor planejado do convênio.</td>
+                                <td class="px-4 py-3">Define a **Base Global Bruta** unificada para a incidência correta das faixas tributárias.</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Insalubridade Técnica</td>
-                                <td class="px-4 py-3">Servidores alocados em laboratórios de análises químicas, físicas ou de solo.</td>
-                                <td class="px-4 py-3">Soma ao vencimento um percentual configurado (10%, 20% ou 40%) sobre o salário-base conforme laudo do setor de segurança do trabalho.</td>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">INSS Progressivo & RPPS</td>
+                                <td class="px-4 py-3">Incidência sobre a Base Global Bruta, deduzindo o INSS já recolhido em folha SIPES.</td>
+                                <td class="px-4 py-3">Calcula as faixas progressivas sobre a diferença restante, suportando também regime de previdência RPPS manual.</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Dedução de Faltas</td>
-                                <td class="px-4 py-3">Ausência não justificada detectada na importação biométrica do ponto.</td>
-                                <td class="px-4 py-3">Cálculo de desconto financeiro diário equivalente a 1/30 avos do salário por dia faltoso.</td>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">IRRF Transição & Isenção</td>
+                                <td class="px-4 py-3">Cálculo de alíquota sobre base tributável.</td>
+                                <td class="px-4 py-3">Aplica isenção total automática de IRRF para valores abaixo de R$ 5.000,00 e redutor progressivo para bases de até R$ 7.350,00.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Faltas Proporcionais</td>
+                                <td class="px-4 py-3">Ausência de dias trabalhados informados no fechamento da folha.</td>
+                                <td class="px-4 py-3">Aplica redutor de <code>dias_trabalhados / 30.0</code> sobre o valor integral do convênio antes de somar as taxas.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -299,28 +287,25 @@
                 <span class="material-symbols-outlined text-secondary">description</span> 5. Módulo de Gestão de Contratos e Convênios (Intranet)
             </h2>
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Caminho no painel: <code class="bg-surface-container px-1.5 py-0.5 rounded text-secondary dark:bg-inverse-surface/20 font-mono text-sm">/admin/contratos</code>
-                <br>Gerencia a saúde jurídica e orçamentária dos convênios tecnológicos e compras públicas com fornecedores de laboratórios de precisão do ITPS.
+                Desenvolvido em **Flutter Desktop** e otimizado para Windows, este módulo realiza o acompanhamento sistemático de todos os convênios tecnológicos e compras públicas com fornecedores de laboratórios de precisão do ITPS.
             </p>
 
             <div class="space-y-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Telas e Visões Operacionais:</h3>
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Arquitetura de Dados e Recursos Operacionais:</h3>
                 
                 <div class="space-y-4">
                     <!-- Contract Screen 1 -->
                     <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
                         <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">border_color</span> 1. Tela de Cadastro de Contratos & Aditivos
+                            <span class="material-symbols-outlined text-lg">border_color</span> 1. Banco de Dados Compartilhado & Persistência Local (SQLite FFI)
                         </h4>
                         <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Formulário unificado para lançar as diretrizes orçamentárias e fiscais do contrato governamental assinado, integrado ao schema <code>contratos</code> do PostgreSQL.
+                            O sistema é configurado com inicialização **SQLite FFI** para Windows Desktop. Ele gerencia as transações de forma altamente colaborativa apontando diretamente para um **caminho de rede local** (diretório compartilhado do servidor interno), dispensando bancos complexos na nuvem.
                         </p>
                         <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
-                            <li><strong>APIs RESTful CRUD (FastAPI):</strong> Gerenciamento completo de contratos e termos aditivos via requisições assíncronas persistentes no banco de dados.</li>
-                            <li><strong>Identificação Técnica:</strong> Número do contrato/licitação, Razão Social do fornecedor, CNPJ de destino e objeto licitado.</li>
-                            <li><strong>Valores e Saldos:</strong> Valor total empenhado, valor da parcela mensal e dotação orçamentária vinculada.</li>
-                            <li><strong>Vigência e Assinatura:</strong> Calendários para registrar Data de Assinatura, Início da Execução e Fim da Vigência do documento.</li>
-                            <li><strong>Gerenciador de Aditivos:</strong> Tela flutuante acoplada ao contrato-mãe para cadastrar termos aditivos de prorrogação de prazo ou acréscimos/supressões de valor (limite legal de 25%).</li>
+                            <li><strong>Campos Detalhados:</strong> Rastreia Instituição, Tipo de Contrato (Receita, Parceria, Estágio, Cooperação, Conformidade), Objetivo, Valor Integral do empenho e anexo em PDF (<code>caminho_arquivo</code>).</li>
+                            <li><strong>Mapeamento de Gastos (v4):</strong> Coluna em tempo real <code>valor_gasto</code> integrada no banco de dados para contabilizar deduções e amortizações da saúde do convênio.</li>
+                            <li><strong>Categorias Predefinidas e Colorizadas:</strong> Separação visual instantânea no Dashboard por cores (Receitas: Verde, Parcerias/Estágios: Azul/Amarelo, Cooperação: Roxo, Conformidade: Vermelho).</li>
                         </div>
                     </div>
 
@@ -389,7 +374,7 @@
                         <div>
                             <span class="material-symbols-outlined text-secondary text-2xl mb-2">database</span>
                             <h4 class="font-bold text-sm text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Banco de Dados</h4>
-                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Persistência centralizada em **PostgreSQL** hospedado no servidor interno da autarquia <code>IP: 172.23.6.109</code>.</p>
+                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Persistência centralizada em **PostgreSQL** hospedado de forma segura no servidor interno da autarquia.</p>
                         </div>
                     </div>
                 </div>
