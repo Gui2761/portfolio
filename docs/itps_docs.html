@@ -365,36 +365,119 @@
                 <span class="material-symbols-outlined text-secondary">view_list</span> 6. Plano de Contratações Anual (PCA)
             </h2>
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Caminho no painel: <code class="bg-surface-container px-1.5 py-0.5 rounded text-secondary dark:bg-inverse-surface/20 font-mono text-sm">/admin/pca</code>
-                <br>O Plano de Contratações Anual (PCA) é um sistema autônomo e independente do módulo de Contratos. Ele serve como a ferramenta oficial de planejamento prévio e centralização de todas as demandas e futuras contratações de bens, serviços e obras da autarquia para o exercício financeiro subsequente.
+                O **Plano de Contratações Anual (PCA)** é um ecossistema independente e autônomo, estruturado para centralizar o planejamento prévio e as demandas de compras (bens, insumos, equipamentos e serviços) do ITPS para o exercício financeiro subsequente.
             </p>
 
             <div class="space-y-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Arquitetura e Recursos Operacionais:</h3>
-                
-                <div class="space-y-4">
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">web</span> 1. Plataforma Web Centralizada do PCA
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Interface responsiva e dinâmica dedicada exclusivamente ao setor de compras e planejamento para a consolidação de planos de contratações anuais.
-                        </p>
-                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
-                            <li><strong>Previsibilidade Orçamentária:</strong> Permite estimar e planejar as futuras compras públicas alinhadas ao orçamento disponível da autarquia.</li>
-                            <li><strong>Evita Duplicidade de Demandas:</strong> O sistema consolida as requisições de diferentes laboratórios e setores de pesquisa científica do ITPS, agrupando itens correlatos de forma inteligente.</li>
-                            <li><strong>Modelagem de Dados (PostgreSQL):</strong> Mapeado sob um schema independente <code>pca</code> para garantir a total autonomia dos registros e logs em relação aos sistemas de pagamentos e de contratos em execução.</li>
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Especificações de Arquitetura e Tecnologia:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-4 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20 flex flex-col justify-between">
+                        <div>
+                            <span class="material-symbols-outlined text-secondary text-2xl mb-2">desktop_windows</span>
+                            <h4 class="font-bold text-sm text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Frontend Desktop</h4>
+                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Desenvolvido em **Flutter** para Windows Desktop, distribuído via executável nativo <code>app.exe</code> com interface rica e fluida.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20 flex flex-col justify-between">
+                        <div>
+                            <span class="material-symbols-outlined text-secondary text-2xl mb-2">api</span>
+                            <h4 class="font-bold text-sm text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Backend FastAPI</h4>
+                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Desenvolvido em **Python (FastAPI)** rodando na porta <code>8000</code> com inicialização automática integrada ao cliente desktop.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20 flex flex-col justify-between">
+                        <div>
+                            <span class="material-symbols-outlined text-secondary text-2xl mb-2">database</span>
+                            <h4 class="font-bold text-sm text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Banco de Dados</h4>
+                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Persistência centralizada em **PostgreSQL** hospedado no servidor interno da autarquia <code>IP: 172.23.6.109</code>.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="space-y-4 pt-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Regras de Negócio e Planejamento Estratégico:</h3>
-                <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <li><strong>Integração com Cronogramas do Estado:</strong> O sistema valida as datas de submissão do planejamento para respeitar rigorosamente os prazos legais estipulados pela Secretaria de Estado da Administração de Sergipe.</li>
-                    <li><strong>Consolidação em Lote:</strong> Rotinas backend em FastAPI automatizam a geração de relatórios consolidados em PDF e arquivos CSV estruturados para importação direta no portal de compras públicas.</li>
-                </ul>
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Perfis de Acesso & Permissões (Login Único):</h3>
+                <div class="overflow-x-auto rounded-xl border border-outline-variant/30 bg-surface-container-lowest dark:bg-inverse-surface/5">
+                    <table class="min-w-full divide-y divide-outline-variant/20 text-left text-xs md:text-sm text-on-surface dark:text-inverse-on-surface">
+                        <thead class="bg-surface-container dark:bg-inverse-surface/35 font-bold uppercase text-xs">
+                            <tr>
+                                <th class="px-4 py-3">Perfil de Usuário</th>
+                                <th class="px-4 py-3">Escopo Operacional</th>
+                                <th class="px-4 py-3">Permissões de Escrita</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/10 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                            <tr>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">admin_panel_settings</span> Administrador</td>
+                                <td class="px-4 py-3">Visualização global, controle de prazos limites, gerenciamento de contas, Dashboard BI integrado e cópia de anos.</td>
+                                <td class="px-4 py-3 text-green-600 font-bold dark:text-secondary-fixed-dim">Irrestrita (Acesso Total)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">edit</span> Editor (Setores/Laboratórios)</td>
+                                <td class="px-4 py-3">Contas isoladas por laboratório (Solos, Química de Águas, Microbiologia, etc.). Edita apenas os dados do próprio setor.</td>
+                                <td class="px-4 py-3 text-yellow-600 font-bold">Condicionada ao Prazo e Liberação</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">visibility</span> Visualizador</td>
+                                <td class="px-4 py-3">Leitura de dados e relatórios. Não pode criar, editar ou excluir itens do PCA.</td>
+                                <td class="px-4 py-3 text-red-600 font-bold">Nenhuma (Apenas Leitura)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="space-y-4 pt-4">
+                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Funcionalidades e Regras de Negócio Críticas:</h3>
+                <div class="space-y-4">
+                    <!-- Feature 1 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">alarm</span> 1. Cronômetro Regressivo de Edição & Bloqueio Automatizado
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            O administrador define uma data/hora limite para o encerramento do planejamento. Na interface dos operadores, um banner dinâmico exibe a contagem regressiva em tempo real (Dias, Horas, Minutos e Segundos).
+                        </p>
+                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
+                            <li><strong>Trava de Segurança:</strong> Ao zerar o cronômetro, a interface oculta instantaneamente as opções de CRUD e o backend FastAPI rejeita qualquer requisição subsequente de escrita.</li>
+                            <li><strong>Bloqueio Imediato:</strong> Função emergencial <code>Bloquear Já</code> para encerramento instantâneo de todas as edições no painel do administrador.</li>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">fact_check</span> 2. Botão "Finalizar Planejamento" e Badges de Status
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            Ao concluir a digitação de suas demandas, o setor clica em <code>Finalizar Planejamento</code>. O sistema realiza o fechamento lógico das tabelas, desloga o operador e muda o badge do usuário para <code>Bloqueado (Setor)</code> no painel administrativo, impedindo novas edições.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">bar_chart</span> 3. Dashboard BI & Exportação Multiformato
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            O administrador tem acesso a gráficos dinâmicos de custos por categoria de recurso, distribuição por grupos/pastas e somatório ordenado por laboratório. Os dados planejados podem ser exportados localmente em dois formatos distintos:
+                        </p>
+                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-2">
+                            <li><strong>CSV (Excel):</strong> Exportação tabular limpa e formatada das linhas de demandas por setor para análise orçamentária avançada.</li>
+                            <li><strong>TXT (Relatório):</strong> Exportação textual padronizada com cabeçalhos oficiais do ITPS para formalização física de processos administrativos.</li>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">content_copy</span> 4. Cópia Inteligente e Segura entre Exercícios (Anos)
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            Permite ao administrador copiar todos os itens cadastrados de um ano anterior (ex: 2026) para o próximo ciclo (ex: 2027), reduzindo o retrabalho em demandas recorrentes. Para segurança contra deleções acidentais no destino, o sistema exige a digitação da palavra <code>COPIAR</code> como confirmação explícita.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
