@@ -229,9 +229,10 @@
                             <span class="material-symbols-outlined text-lg">admin_panel_settings</span> 1. Tela do Gestor de RH (Processamento de Folha)
                         </h4>
                         <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Painel completo contendo a listagem geral de servidores ativos (Efetivos, Cargos Comissionados e Bolsistas Científicos). 
+                            Painel completo contendo a listagem geral de servidores ativos (Efetivos, Cargos Comissionados e Bolsistas Científicos) conectado ao novo banco **PostgreSQL centralizado** sob o schema relacional <code>folha</code>.
                         </p>
                         <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
+                            <li><strong>APIs RESTful CRUD (FastAPI):</strong> Endpoint persistentes e validados para inserção, edição e exclusão de dados dos servidores diretamente no PostgreSQL.</li>
                             <li><strong>Função Importar Ponto:</strong> Conecta e valida a carga horária e faltas vindas do sistema biométrico de catracas.</li>
                             <li><strong>Função Configurar Vencimentos:</strong> Permite cadastrar salários-base de novos cargos ou reajustes salariais de servidores.</li>
                             <li><strong>Alíquotas e Tributos Legais:</strong> Campos para ajustar teto de cálculo do Imposto de Renda Retido na Fonte (IRRF), taxas do INSS e previdência estadual (Iprev).</li>
@@ -309,13 +310,28 @@
                             <span class="material-symbols-outlined text-lg">border_color</span> 1. Tela de Cadastro de Contratos & Aditivos
                         </h4>
                         <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Formulário unificado para lançar as diretrizes orçamentárias e fiscais do contrato governamental assinado.
+                            Formulário unificado para lançar as diretrizes orçamentárias e fiscais do contrato governamental assinado, integrado ao schema <code>contratos</code> do PostgreSQL.
                         </p>
                         <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
+                            <li><strong>APIs RESTful CRUD (FastAPI):</strong> Gerenciamento completo de contratos e termos aditivos via requisições assíncronas persistentes no banco de dados.</li>
                             <li><strong>Identificação Técnica:</strong> Número do contrato/licitação, Razão Social do fornecedor, CNPJ de destino e objeto licitado.</li>
                             <li><strong>Valores e Saldos:</strong> Valor total empenhado, valor da parcela mensal e dotação orçamentária vinculada.</li>
                             <li><strong>Vigência e Assinatura:</strong> Calendários para registrar Data de Assinatura, Início da Execução e Fim da Vigência do documento.</li>
                             <li><strong>Gerenciador de Aditivos:</strong> Tela flutuante acoplada ao contrato-mãe para cadastrar termos aditivos de prorrogação de prazo ou acréscimos/supressões de valor (limite legal de 25%).</li>
+                        </div>
+                    </div>
+
+                    <!-- Contract Screen 3 (NEW PCA Integration) -->
+                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
+                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">view_list</span> 3. Módulo PCA (Plano de Contratações Anual) & e-DOC
+                        </h4>
+                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                            Módulo avançado integrado à intranet para planejar e centralizar todas as contratações públicas previstas para o exercício governamental, contando com suporte web centralizado, ícone premium e conexões externas estatais.
+                        </p>
+                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
+                            <li><strong>Aplicativo PCA Web Centralizado:</strong> Interface responsiva para o setor de compras planejar metas anuais de aquisições sem conflitos ou duplicidades, validando os dados no schema PostgreSQL.</li>
+                            <li><strong>Botão de Acesso Rápido ao e-DOC Sergipe:</strong> Atalho oficial acoplado diretamente à interface de gestão de contratos para o redirecionamento instantâneo e consulta rápida de autenticidade de assinaturas eletrônicas estaduais.</li>
                         </div>
                     </div>
 
@@ -357,15 +373,16 @@
         <!-- 6. Segurança -->
         <section id="seguranca" class="space-y-6">
             <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">security</span> 6. Níveis de Acesso e Segurança (RBAC)
+                <span class="material-symbols-outlined text-secondary">security</span> 6. Níveis de Acesso & Infraestrutura DevOps (Docker)
             </h2>
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Toda a intranet está blindada contra vazamentos de informações sensíveis (como dados de vencimento de folha de pagamento de servidores) seguindo as premissas da LGPD.
+                Toda a intranet está blindada seguindo premissas da LGPD e apoiada em uma robusta infraestrutura de contêineres que facilita o deploy e a escalabilidade:
             </p>
             <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
                 <li><strong>Diretoria Geral:</strong> Acesso total de leitura e geração de relatórios de auditoria financeira gerais de folha e contratos públicos.</li>
                 <li><strong>Setor de RH:</strong> Acesso de escrita e edição para a Folha de Pagamento. Bloqueados nos painéis de aditivos orçamentários do setor jurídico.</li>
-                <li><strong>Procuradoria Jurídica:</strong> Permissão de edição e controle de contratos, termos aditivos e semáforo de vigência. Bloqueados nos painéis de processamento bancário da folha de pagamento.</li>
+                <li><strong>Procuradoria Jurídica:</strong> Permissão de edição e controle de contratos, termos aditivos, PCA e semáforo de vigência.</li>
+                <li><strong>Infraestrutura DevOps (Docker & Compose):</strong> Todo o ecossistema (Portal React/Vite, Backend FastAPI/Uvicorn e banco PostgreSQL) é orquestrado através de contêineres Docker independentes (<code>Dockerfile</code> dedicados) e um arquivo <code>docker-compose.yml</code> unificado com mapeamento de volumes de rede de alto desempenho. Possui rotina de inicialização automática via scripts <code>.bat</code> (Windows) e <code>.sh</code> (Linux).</li>
             </ul>
         </section>
         
