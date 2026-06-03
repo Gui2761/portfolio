@@ -124,32 +124,22 @@
 
 <!-- Main Container -->
 <div class="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-    
     <!-- Sidebar Navigation -->
     <aside class="lg:col-span-3 space-y-4">
         <div class="sticky top-28 bg-surface-container-low dark:bg-inverse-surface/10 p-6 rounded-2xl border border-outline-variant/20 space-y-4 shadow-sm">
-            <h4 class="font-display font-bold text-on-surface dark:text-inverse-on-surface text-sm uppercase tracking-wider">Manual do Sistema</h4>
+            <h4 class="font-display font-bold text-on-surface dark:text-inverse-on-surface text-sm uppercase tracking-wider">Manual de Telas</h4>
             <nav class="flex flex-col gap-1.5">
-                <a href="#intro" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <span class="material-symbols-outlined text-lg">info</span> 1. Introdução
+                <a href="#portal" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">home</span> 1. Portal Central
                 </a>
-                <a href="#robot" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <span class="material-symbols-outlined text-lg">smart_toy</span> 2. Robô Leitor (D.O.)
+                <a href="#contratos" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">description</span> 2. Gestão de Contratos
                 </a>
-                <a href="#noticias" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <span class="material-symbols-outlined text-lg">newspaper</span> 3. Notícias & CMS
+                <a href="#pca" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-lg">view_list</span> 3. Sistema do PCA
                 </a>
                 <a href="#folha" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
                     <span class="material-symbols-outlined text-lg">payments</span> 4. Folha de Pagamento
-                </a>
-                <a href="#contratos" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <span class="material-symbols-outlined text-lg">description</span> 5. Gestão de Contratos
-                </a>
-                <a href="#pca" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <span class="material-symbols-outlined text-lg">view_list</span> 6. Plano de Contratações Anual (PCA)
-                </a>
-                <a href="#seguranca" class="nav-item flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs transition-all hover:bg-secondary/10 hover:text-secondary text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <span class="material-symbols-outlined text-lg">security</span> 7. Níveis de Acesso
                 </a>
             </nav>
         </div>
@@ -160,326 +150,385 @@
         
         <!-- Header -->
         <header class="space-y-4">
-            <span class="text-xs font-bold uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Especificações Técnicas Governamentais</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim">Documentação de Interfaces Administrativas</span>
             <h1 class="font-display text-4xl md:text-5xl font-black text-on-surface dark:text-inverse-on-surface leading-tight">
-                Manual do Portal & Intranet ITPS
+                Manual Técnico-Operacional — ITPS
             </h1>
             <p class="text-lg text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Documentação técnica mapeando a infraestrutura pública e intranet administrativa do <strong>Instituto de Tecnologia e Pesquisa de Sergipe (ITPS)</strong>, detalhando os robôs de automação e as telas de operações de RH e Financeiro.
+                Este manual técnico descreve detalhadamente o comportamento de telas, campos de entrada, validações locais de interface, fluxos lógicos e regras de negócio da Intranet Geral e dos sistemas internos de Contratos, PCA e Folha (RH) do ITPS.
             </p>
         </header>
 
-        <!-- 1. Introdução -->
-        <section id="intro" class="space-y-6">
+        <!-- 1. PORTAL CENTRAL DA INTRANET -->
+        <section id="portal" class="space-y-8">
             <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">info</span> 1. Introdução ao Ecossistema ITPS
+                <span class="material-symbols-outlined text-secondary">home</span> 1. Portal Central da Intranet
             </h2>
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                O ecossistema do ITPS consiste em uma <strong>arquitetura de alto impacto governamental</strong> que integra o portal oficial público ao sistema administrativo de uso interno da autarquia. A solução visa desburocratizar a gestão de servidores, assegurar a conformidade jurídica de contratos públicos e trazer transparência por meio de rotinas automatizadas por IA e web scraping.
+                Ponto de entrada unificado da autarquia, consolidando canais de comunicação interna, murais informativos públicos e acessos diretos a subsistemas.
             </p>
 
-            <div class="bg-surface-container-low dark:bg-inverse-surface/10 p-6 rounded-2xl border border-outline-variant/30 mt-6 flex flex-col items-center">
-                <img src="../assets/itps_main.png" alt="Portal Público do ITPS, Radar Diário Oficial e CMS de Notícias" class="w-full h-auto rounded-xl shadow-lg border border-outline-variant/20 hover:scale-[1.01] transition-transform duration-300">
-                <p class="text-xs text-center text-on-surface-variant mt-3 italic">Portal Oficial do ITPS integrado com o Radar do Diário Oficial (automação à esquerda) e o CMS de Notícias (centro).</p>
-            </div>
-        </section>
+            <!-- Tela 1.1 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 1.1: Home (Página Inicial)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Cabeçalho (Header):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Logo Institucional:</strong> Renderizado à esquerda em alta definição, respeitando as proporções de contraste visual do manual de identidade da marca.</li>
+                        <li><strong>Widget de Clima em Tempo Real:</strong> Posicionado na extremidade direita do cabeçalho. Consome dados de temperatura de Aracaju/SE em tempo real. Exibe graficamente o valor em graus Celsius acompanhado de uma seta de tendência e um ícone ou emoji que se adapta dinamicamente às condições meteorológicas (ex: ☀️ Sol, 🌧️ Chuva, ☁️ Nublado).</li>
+                        <li><strong>Menu de Navegação Principal:</strong> Links de acesso rápido a outras páginas internas da intranet, mantendo a aba <em>Home</em> ativa por padrão.</li>
+                    </ul>
 
-        <!-- 2. Robô Leitor -->
-        <section id="robot" class="space-y-6">
-            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">smart_toy</span> 2. Robô do Diário Oficial (Web Scraper Bot)
-            </h2>
-            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Uma automação robótica desenvolvida em Python que monitora e extrai informações oficiais diariamente, reduzindo de horas para segundos o tempo de triagem jurídica.
-            </p>
-            <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                <li><strong>Rotina de Raspagem:</strong> O bot inicia-se de forma agendada nas primeiras horas do dia, mapeando os servidores estaduais e baixando as edições mais recentes do Diário Oficial do Estado (DOE).</li>
-                <li><strong>Busca Semântica:</strong> Realiza uma varredura de strings de alta precisão buscando por termos estruturados como <code>"ITPS"</code>, <code>"Instituto de Tecnologia e Pesquisa"</code>, números de portarias e nomes de servidores.</li>
-                <li><strong>Gatilho de Notificação:</strong> Caso o termo seja encontrado, a API gera uma notificação interna no painel da Procuradoria Jurídica do ITPS contendo o parágrafo da citação, link de download do diário e anexa o documento recortado.</li>
-            </ul>
-        </section>
+                    <p><strong>Seção Carrossel de Notícias (Hero Section):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Painel deslizante de banners em destaque com as principais chamadas e informativos institucionais.</li>
+                        <li><strong>Interações e Controles:</strong> Botões direcionais nas laterais (<kbd>❮</kbd> e <kbd>❯</kbd>) para avanço e retorno manual de slides, além de indicadores circulares (*dots*) na parte inferior que marcam a posição ativa atual.</li>
+                    </ul>
 
-        <!-- 3. Notícias & CMS -->
-        <section id="noticias" class="space-y-6">
-            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">newspaper</span> 3. Portal Público e Gerenciador de Conteúdo (CMS)
-            </h2>
-            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Interface de comunicação oficial com a população sergipana. Permite a divulgação de laudos, pesquisas científicas e notícias de utilidade pública de forma ágil e otimizada para SEO.
-            </p>
-            <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                <li><strong>Carrossel Dinâmico:</strong> Slides rotativos panorâmicos configuráveis diretamente pelo painel administrativo para notícias de alta prioridade.</li>
-                <li><strong>Repositório de Pesquisas:</strong> Módulo de indexação de laudos analíticos e pesquisas tecnológicas públicas com suporte a anexos em PDF e filtros rápidos por departamento científico.</li>
-            </ul>
-        </section>
+                    <p><strong>Grid de Acesso Rápido:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Coleção de blocos com transições de profundidade suaves (*hover effect*) divididos em:</li>
+                        <li><strong>Acessos Externos:</strong> Atalhos rápidos para plataformas externas essenciais (Expresso, i-gesp, SEI Sergipe, e-DOC Sergipe, Licitanet e Compras.gov.br).</li>
+                        <li><strong>Sistemas Internos ITPS:</strong> Destaques com bordas colorizadas para diferenciação visual rápida: <strong>Contratos</strong> (borda verde), <strong>Folha de Pagamento</strong> (borda azul) e <strong>PCA</strong> (borda amarela).</li>
+                    </ul>
 
-        <!-- 4. Folha de Pagamento -->
-        <section id="folha" class="space-y-6">
-            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">payments</span> 4. Módulo de Folha de Pagamento (Intranet)
-            </h2>
-            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Desenvolvido como um Aplicativo Mobile nativo em Flutter (Dart), este módulo permite ao setor de RH e Financeiro gerenciar as folhas de pagamentos de estagiários e funcionários de forma automatizada, abandonando planilhas manuais. Todas as operações são realizadas 100% online, conectando-se diretamente ao banco de dados centralizado PostgreSQL (schema <code>folha</code>) por meio de APIs FastAPI, garantindo sincronização imediata e eliminando totalmente o uso de bancos de dados locais.
-            </p>
-
-            <div class="space-y-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Telas e Visões Operacionais:</h3>
-                
-                <div class="space-y-4">
-                    <!-- Screen 1 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">admin_panel_settings</span> 1. Painel Administrativo de Recursos Humanos (Flutter Mobile)
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Tela simplificada para o operador do RH cadastrar, editar e excluir funcionários/estagiários, com persistência relacional sincronizada online via APIs RESTful conectadas ao banco central. A antiga arquitetura com banco local SQLite foi totalmente erradicada para assegurar máxima integridade dos dados de pagamento.
-                        </p>
-                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
-                            <li><strong>Calculadora de Taxas Integrada (Dart):</strong> Módulo <code>calculadora_taxas.dart</code> que executa as regras matemáticas complexas sobre o vencimento de forma pioneira e instantânea.</li>
-                            <li><strong>Sincronização com o Backend:</strong> Envio imediato dos eventos de folha para salvamento central no servidor por meio de endpoints FastAPI validados.</li>
-                            <li><strong>Gerador de Holerites em PDF:</strong> Botão integrado que utiliza o arquivo <code>gerador_pdf.dart</code> para exportar contracheques organizados com cabeçalho ITPS.</li>
-                        </div>
-                    </div>
+                    <p><strong>Coluna Lateral Direita (Widgets):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Radar Diário Oficial (IOSE):</strong> Painel dinâmico que exibe publicações recentes do Diário Oficial de Sergipe contendo termos de interesse previamente selecionados para a autarquia.</li>
+                        <li><strong>Aniversariantes do Mês:</strong> Lista com ordenação cronológica contendo os nomes e setores de servidores aniversariantes do mês atual.</li>
+                        <li><strong>Mural de Avisos Internos:</strong> Painel estilizado com efeito translúcido (*glassmorphism*) exibindo avisos internos ativos em três categorias de urgência: Geral, Informativo e Crítico (este último exibido com efeito pulsante vermelho).</li>
+                        <li><strong>Botão Administrativo (⚙️):</strong> Ícone localizado no topo direito do Mural para abertura do modal de gerenciamento.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="space-y-4 pt-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Regras de Negócio e Cálculos Automatizados:</h3>
-                <div class="overflow-x-auto rounded-xl border border-outline-variant/30 bg-surface-container-lowest dark:bg-inverse-surface/5">
-                    <table class="min-w-full divide-y divide-outline-variant/20 text-left text-xs md:text-sm text-on-surface dark:text-inverse-on-surface">
-                        <thead class="bg-surface-container dark:bg-inverse-surface/35 font-bold uppercase text-xs">
-                            <tr>
-                                <th class="px-4 py-3">Cálculo/Métrica</th>
-                                <th class="px-4 py-3">Gatilho / Condição</th>
-                                <th class="px-4 py-3">Ação Operacional do Sistema</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-outline-variant/10 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                            <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Encontro de Contas SIPES</td>
-                                <td class="px-4 py-3">Soma do vencimento governamental SIPES ao valor planejado do convênio.</td>
-                                <td class="px-4 py-3">Define a Base Global Bruta unificada para a incidência correta das faixas tributárias.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">INSS Progressivo & RPPS</td>
-                                <td class="px-4 py-3">Incidência sobre a Base Global Bruta, deduzindo o INSS já recolhido em folha SIPES.</td>
-                                <td class="px-4 py-3">Calcula as faixas progressivas sobre a diferença restante, suportando também regime de previdência RPPS manual.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">IRRF Transição & Isenção</td>
-                                <td class="px-4 py-3">Cálculo de alíquota sobre base tributável.</td>
-                                <td class="px-4 py-3">Aplica isenção total automática de IRRF para valores abaixo de R$ 5.000,00 e redutor progressivo para bases de até R$ 7.350,00.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface">Faltas Proporcionais</td>
-                                <td class="px-4 py-3">Ausência de dias trabalhados informados no fechamento da folha.</td>
-                                <td class="px-4 py-3">Aplica redutor de <code>dias_trabalhados / 30.0</code> sobre o valor integral do convênio antes de somar as taxas.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Tela 1.2 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 1.2: Modal Administrativo do Mural (Avisos)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Etapa de Autenticação:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Campo para inserção da senha administrativa.</li>
+                        <li><strong>Validação:</strong> Compara o código inserido com o código mestre configurado para a aplicação. Se inválido, apresenta um alerta de erro estilizado com animação.</li>
+                    </ul>
+
+                    <p><strong>Formulário de Cadastro de Aviso (Exibido após validação):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Título do Aviso:</strong> Campo obrigatório com validação contra campos em branco.</li>
+                        <li><strong>Conteúdo do Aviso:</strong> Campo de texto rico para formatação livre da mensagem de aviso.</li>
+                        <li><strong>Nível de Prioridade:</strong> Seleção rápida em caixa de escolha que associa o aviso às prioridades Geral (estilização verde), Informativo (estilização azul) ou Crítico (estilização vermelha).</li>
+                        <li><strong>Ação de Cadastro:</strong> Botão de salvar que realiza a persistência do novo aviso na base local e atualiza a exibição pública de forma instantânea.</li>
+                    </ul>
+
+                    <p><strong>Tabela de Avisos Ativos:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Listagem abaixo do formulário exibindo os registros correntes, permitindo a remoção direta de avisos expirados ou incorretos através de botão com ícone de lixeira (🗑️).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tela 1.3 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 1.3: Contatos e Ramais (`contatos.html`)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Barra de Busca Dinâmica:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Campo de pesquisa proeminente localizado no topo da página. Filtra em tempo real os cards de contatos à medida que o usuário digita nomes, setores, ramais ou cargos específicos, sem necessidade de recarregar a página.</li>
+                    </ul>
+                    <p><strong>Grid de Cartões de Contatos:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Exibição estruturada com informações essenciais organizadas por setor ou profissional:
+                            <ul class="list-circle pl-6 mt-1 space-y-1">
+                                <li>Nome Completo destacado em negrito para facilitar a leitura rápida.</li>
+                                <li>Cargo, Setor/Departamento e Lotação correspondente.</li>
+                                <li>E-mail institucional com link funcional.</li>
+                                <li>Número do ramal destacado visualmente.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Gestão de Contratos -->
-        <section id="contratos" class="space-y-6">
+        <!-- 2. SISTEMA DE GESTÃO DE CONTRATOS -->
+        <section id="contratos" class="space-y-8">
             <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">description</span> 5. Módulo de Gestão de Contratos e Convênios (Intranet)
+                <span class="material-symbols-outlined text-secondary">description</span> 2. Sistema de Gestão de Contratos e Convênios
             </h2>
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Desenvolvido em Flutter Desktop e otimizado para Windows, este módulo realiza o acompanhamento sistemático de todos os convênios tecnológicos e compras públicas com fornecedores de laboratórios de precisão do ITPS. O módulo opera de forma 100% online, com as transações persistidas no banco de dados centralizado PostgreSQL (schema <code>contratos</code>), integradas através do backend.
+                Subsistema administrativo para cadastro, controle de vigências, aplicação de aditivos legais e acompanhamento financeiro de instrumentos jurídicos.
             </p>
 
-            <div class="space-y-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Arquitetura de Dados e Recursos Operacionais:</h3>
-                
-                <div class="space-y-4">
-                    <!-- Contract Screen 1 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">border_color</span> 1. Banco de Dados Centralizado & Sincronização Online
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Toda a persistência foi unificada no servidor central PostgreSQL da autarquia. O antigo modelo de banco local (SQLite FFI) compartilhado em pasta de rede local foi totalmente erradicado, garantindo segurança jurídica contra acessos concorrentes e conformidade rígida dos dados.
-                        </p>
-                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
-                            <li><strong>Campos Detalhados:</strong> Rastreia Instituição, Tipo de Contrato (Receita, Parceria, Estágio, Cooperação, Conformidade), Objetivo, Valor Integral do empenho e anexo em PDF (<code>caminho_arquivo</code>).</li>
-                            <li><strong>Mapeamento de Gastos (v4):</strong> Coluna em tempo real <code>valor_gasto</code> integrada no banco de dados para contabilizar deduções e amortizações da saúde do convênio.</li>
-                            <li><strong>Categorias Predefinidas e Colorizadas:</strong> Separação visual instantânea no Dashboard por cores (Receitas: Verde, Parcerias/Estágios: Azul/Amarelo, Cooperação: Roxo, Conformidade: Vermelho).</li>
-                        </div>
-                    </div>
-
-                    <!-- Contract Screen 2 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">ring_volume</span> 2. Painel Monitor e Alerta de Vencimentos (Semáforo Inteligente)
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Tela centralizadora que atua como sentinela orçamentária para a equipe jurídica, evitando a perda de prazos de rescisões ou prorrogações.
-                        </p>
-                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-2">
-                            <div class="flex gap-2 items-center">
-                                <span class="w-3.5 h-3.5 rounded-full bg-green-500 block"></span>
-                                <span><strong>Verde (Vigência Saudável):</strong> Contratos com mais de 90 dias restantes para vencimento. Nenhuma ação é necessária.</span>
-                            </div>
-                            <div class="flex gap-2 items-center">
-                                <span class="w-3.5 h-3.5 rounded-full bg-yellow-500 block animate-pulse"></span>
-                                <span><strong>Amarelo (Atenção RH/Jurídico):</strong> Vigência entre 60 e 90 dias restantes. O sistema dispara e-mails preventivos para as partes interessadas solicitando relatórios de metas.</span>
-                            </div>
-                            <div class="flex gap-2 items-center">
-                                <span class="w-3.5 h-3.5 rounded-full bg-red-500 block"></span>
-                                <span><strong>Vermelho (Risco de Multa/Prejuízo):</strong> Menos de 30 dias para expirar ou contrato oficialmente vencido. O painel emite alertas sonoros e notifica a diretoria para ação corretiva urgente.</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Tela 2.1 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 2.1: Login (Autenticação)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-2">
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Campo Usuário/Matrícula:</strong> Caixa de texto para identificação do servidor, configurada com foco automático inicial ao carregar a página.</li>
+                        <li><strong>Campo Senha:</strong> Entrada do tipo password para proteção visual dos caracteres inseridos, contendo ícone lateral interativo para ocultar ou revelar a senha.</li>
+                        <li><strong>Opção Lembrar Login:</strong> Opção selecionável que armazena a sessão ativa de forma segura no navegador do usuário, simplificando futuros acessos.</li>
+                        <li><strong>Ação de Entrada:</strong> Botão de submissão do formulário que exibe um componente visual de carregamento dinâmico durante a validação da requisição ao servidor.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="space-y-4 pt-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Regras de Negócio e Segurança de Vigência:</h3>
-                <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                    <li><strong>Travamento de Aditivos Fiscais:</strong> O sistema impossibilita de forma programática a inserção de aditivos financeiros que extrapolem <strong>25%</strong> do valor original do contrato, de acordo com as leis de licitação vigentes no país.</li>
-                    <li><strong>Alerta Automatizado por E-mail:</strong> Um serviço rodando em segundo plano verifica os prazos à meia-noite e envia e-mails contendo o PDF do contrato e justificativa para a Procuradoria Jurídica do ITPS nos estágios amarelo e vermelho.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 6. Plano de Contratações Anual (PCA) -->
-        <section id="pca" class="space-y-6">
-            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">view_list</span> 6. Plano de Contratações Anual (PCA)
-            </h2>
-            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                O Plano de Contratações Anual (PCA) é um ecossistema independente e autônomo, estruturado para centralizar o planejamento prévio e as demandas de compras (bens, insumos, equipamentos e serviços) do ITPS para o exercício financeiro subsequente.
-            </p>
-
-            <div class="space-y-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Especificações de Arquitetura e Tecnologia:</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="p-4 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20 flex flex-col justify-between">
-                        <div>
-                            <span class="material-symbols-outlined text-secondary text-2xl mb-2">desktop_windows</span>
-                            <h4 class="font-bold text-sm text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Frontend Desktop</h4>
-                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Desenvolvido em Flutter para Windows Desktop, distribuído via executável nativo <code>app.exe</code> com interface rica e fluida.</p>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20 flex flex-col justify-between">
-                        <div>
-                            <span class="material-symbols-outlined text-secondary text-2xl mb-2">api</span>
-                            <h4 class="font-bold text-sm text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Backend FastAPI</h4>
-                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Desenvolvido em Python (FastAPI) rodando na porta <code>8000</code> com inicialização automática integrada ao cliente desktop.</p>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20 flex flex-col justify-between">
-                        <div>
-                            <span class="material-symbols-outlined text-secondary text-2xl mb-2">database</span>
-                            <h4 class="font-bold text-sm text-on-surface dark:text-inverse-on-surface uppercase tracking-wider">Banco de Dados</h4>
-                            <p class="text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant mt-1 leading-relaxed">Persistência centralizada em PostgreSQL hospedado de forma segura no servidor interno da autarquia.</p>
-                        </div>
-                    </div>
+            <!-- Tela 2.2 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 2.2: Dashboard Geral (Painel de BI)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Cards de Métricas de Desempenho (KPI Cards):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Contratos Ativos:</strong> Destaque em tom verde indicando o número consolidado de contratos vigentes no sistema.</li>
+                        <li><strong>Valor sob Gestão:</strong> Destaque em tom azul exibindo o somatório total consolidado em moeda nacional corrente.</li>
+                        <li><strong>Vigências em Alerta:</strong> Destaque em tom amarelo alertando a quantidade de instrumentos jurídicos cujo vencimento ocorrerá no período de 90 dias.</li>
+                    </ul>
+                    <p><strong>Painéis de Análise Gráfica:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Distribuição de Despesas:</strong> Gráfico de setor circular ilustrando os percentuais de gastos de acordo com o tipo de contrato (Prestação de Serviços, Aquisição, Locação, etc.).</li>
+                        <li><strong>Execução Orçamentária:</strong> Gráfico de barras horizontais indicando a relação proporcional entre o valor efetivamente empenhado e o montante já liquidado ou pago por contrato.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="space-y-4 pt-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Perfis de Acesso & Permissões (Login Único):</h3>
-                <div class="overflow-x-auto rounded-xl border border-outline-variant/30 bg-surface-container-lowest dark:bg-inverse-surface/5">
-                    <table class="min-w-full divide-y divide-outline-variant/20 text-left text-xs md:text-sm text-on-surface dark:text-inverse-on-surface">
-                        <thead class="bg-surface-container dark:bg-inverse-surface/35 font-bold uppercase text-xs">
-                            <tr>
-                                <th class="px-4 py-3">Perfil de Usuário</th>
-                                <th class="px-4 py-3">Escopo Operacional</th>
-                                <th class="px-4 py-3">Permissões de Escrita</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-outline-variant/10 text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                            <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">admin_panel_settings</span> Administrador</td>
-                                <td class="px-4 py-3">Visualização global, controle de prazos limites, gerenciamento de contas, Dashboard BI integrado e cópia de anos.</td>
-                                <td class="px-4 py-3 text-green-600 font-bold dark:text-secondary-fixed-dim">Irrestrita (Acesso Total)</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">edit</span> Editor (Setores/Laboratórios)</td>
-                                <td class="px-4 py-3">Contas isoladas por laboratório (Solos, Química de Águas, Microbiologia, etc.). Edita apenas os dados do próprio setor.</td>
-                                <td class="px-4 py-3 text-yellow-600 font-bold">Condicionada ao Prazo e Liberação</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-semibold text-on-surface dark:text-inverse-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">visibility</span> Visualizador</td>
-                                <td class="px-4 py-3">Leitura de dados e relatórios. Não pode criar, editar ou excluir itens do PCA.</td>
-                                <td class="px-4 py-3 text-red-600 font-bold">Nenhuma (Apenas Leitura)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Tela 2.3 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 2.3: Listagem Geral de Contratos
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Painel de Filtros Avançados:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Campo de pesquisa aberta por razão social da contratada ou pelo objeto resumido do contrato.</li>
+                        <li>Caixas de seleção para filtrar a listagem pelo estado de vigência (Ativos, Vencidos ou Em Alerta) e pelo ano de abertura do processo licitatório.</li>
+                    </ul>
+                    <p><strong>Tabela de Dados Operacionais:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Exibição colunar contendo: identificação do Contrato, número do processo administrativo, contratado, resumo do objeto, valor financeiro integral, período de vigência e sinalizadores visuais de status.</li>
+                        <li><strong>Navegação Detalhada:</strong> Interação de clique sobre as linhas da tabela redireciona o usuário para a tela específica de detalhes do instrumento.</li>
+                        <li><strong>Ação Novo Contrato:</strong> Botão proeminente no canto superior que permite a abertura do formulário de cadastro, restrito a perfis com permissões administrativas ou gestores de compras.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="space-y-4 pt-4">
-                <h3 class="font-display font-bold text-lg text-on-surface dark:text-inverse-on-surface">Funcionalidades e Regras de Negócio Críticas:</h3>
-                <div class="space-y-4">
-                    <!-- Feature 1 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">alarm</span> 1. Cronômetro Regressivo de Edição & Bloqueio Automatizado
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            O administrador define uma data/hora limite para o encerramento do planejamento. Na interface dos operadores, um banner dinâmico exibe a contagem regressiva em tempo real (Dias, Horas, Minutos e Segundos).
-                        </p>
-                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-1">
-                            <li><strong>Trava de Segurança:</strong> Ao zerar o cronômetro, a interface oculta instantaneamente as opções de CRUD e o backend FastAPI rejeita qualquer requisição subsequente de escrita.</li>
-                            <li><strong>Bloqueio Imediato:</strong> Função emergencial <code>Bloquear Já</code> para encerramento instantâneo de todas as edições no painel do administrador.</li>
-                        </div>
-                    </div>
+            <!-- Tela 2.4 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 2.4: Ficha do Contrato (Detalhes Completos)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Módulos de Informações do Contrato:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Dados Legais:</strong> Identificação formal do instrumento jurídico, número original do processo de licitação e link direto integrado para o processo correspondente no sistema de tramitação de documentos do Estado (SEI).</li>
+                        <li><strong>Atores Responsáveis:</strong> Identificação nominal e de matrícula dos fiscais (Titular e Substituto) e do respectivo gestor indicado.</li>
+                        <li><strong>Histórico de Vigências e Aditivos:</strong> Linha do tempo visual mapeando a assinatura original, vigência ativa e estimativas de término, acompanhada do registro cronológico de aditivos de prazo ou reajustes financeiros aplicados.</li>
+                        <li><strong>Documentos Anexos:</strong> Lista para download de arquivos digitalizados em formato padrão de PDF relacionados ao contrato (Edital, Contrato Original, Termos Aditivos e publicações em Diário Oficial).</li>
+                    </ul>
+                </div>
+            </div>
 
-                    <!-- Feature 2 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">fact_check</span> 2. Botão "Finalizar Planejamento" e Badges de Status
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Ao concluir a digitação de suas demandas, o setor clica em <code>Finalizar Planejamento</code>. O sistema realiza o fechamento lógico das tabelas, desloga o operador e muda o badge do usuário para <code>Bloqueado (Setor)</code> no painel administrativo, impedindo novas edições.
-                        </p>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">bar_chart</span> 3. Dashboard BI & Exportação Multiformato
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            O administrador tem acesso a gráficos dinâmicos de custos por categoria de recurso, distribuição por grupos/pastas e somatório ordenado por laboratório. Os dados planejados podem ser exportados localmente em dois formatos distintos:
-                        </p>
-                        <div class="mt-3 pl-4 border-l-2 border-secondary/25 text-xs text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-2">
-                            <li><strong>CSV (Excel):</strong> Exportação tabular limpa e formatada das linhas de demandas por setor para análise orçamentária avançada.</li>
-                            <li><strong>TXT (Relatório):</strong> Exportação textual padronizada com cabeçalhos oficiais do ITPS para formalização física de processos administrativos.</li>
-                        </div>
-                    </div>
-
-                    <!-- Feature 4 -->
-                    <div class="p-5 bg-surface-container dark:bg-inverse-surface/10 rounded-xl border border-outline-variant/20">
-                        <h4 class="font-bold text-secondary dark:text-secondary-fixed-dim text-sm uppercase tracking-wide mb-2 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">content_copy</span> 4. Cópia Inteligente e Segura entre Exercícios (Anos)
-                        </h4>
-                        <p class="text-xs md:text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                            Permite ao administrador copiar todos os itens cadastrados de um ano anterior (ex: 2026) para o próximo ciclo (ex: 2027), reduzindo o retrabalho em demandas recorrentes. Para segurança contra deleções acidentais no destino, o sistema exige a digitação da palavra <code>COPIAR</code> como confirmação explícita.
-                        </p>
-                    </div>
+            <!-- Tela 2.5 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 2.5: Cadastro/Edição de Contratos e Aditivos
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Campos do Formulário de Registro:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Dropdown interativo com busca preditiva para seleção do fornecedor devidamente cadastrado no sistema.</li>
+                        <li>Caixa de texto para descrição do objeto em sua totalidade, além de campos numéricos para inserção do valor contratual e número de parcelas previstas.</li>
+                        <li>Seletores nativos de calendário para datas de início de vigência e previsão de encerramento do contrato.</li>
+                    </ul>
+                    <p><strong>Regras de Validação e Bloqueios Visuais:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Controle de Valores Financeiros:</strong> Bloqueio sistêmico impedindo o salvamento de valores monetários negativos na interface.</li>
+                        <li><strong>Consistência de Cronograma:</strong> Validação de fluxo que impede a submissão do formulário caso a data final do cronograma seja anterior à data inicial de vigência do contrato.</li>
+                        <li><strong>Restrição de Aditivos Financeiros:</strong> O formulário bloqueia de forma automática e local a validação de aditivos financeiros cujos valores somados extrapolem o limite legal máximo de <strong>25%</strong> sobre o valor do contrato original.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 7. Segurança -->
-        <section id="seguranca" class="space-y-6">
+        <!-- 3. SISTEMA DO PCA (PLANO DE CONTRATAÇÕES ANUAL) -->
+        <section id="pca" class="space-y-8">
             <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
-                <span class="material-symbols-outlined text-secondary">security</span> 7. Níveis de Acesso & Infraestrutura DevOps (Docker)
+                <span class="material-symbols-outlined text-secondary">view_list</span> 3. Sistema do PCA (Plano de Contratações Anual)
             </h2>
             <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
-                Toda a intranet está blindada seguindo premissas da LGPD e apoiada em uma robusta infraestrutura de contêineres que facilita o deploy e a escalabilidade:
+                Módulo independente que visa unificar, aprovar e compilar o cronograma de contratações e compras de materiais/serviços dos laboratórios e setores internos da autarquia.
             </p>
-            <ul class="list-disc pl-6 space-y-2 text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant">
-                <li><strong>Diretoria Geral:</strong> Acesso total de leitura e geração de relatórios de auditoria financeira gerais de folha e contratos públicos.</li>
-                <li><strong>Setor de RH:</strong> Acesso de escrita e edição para a Folha de Pagamento. Bloqueados nos painéis de aditivos orçamentários do setor jurídico.</li>
-                <li><strong>Procuradoria Jurídica:</strong> Permissão de edição e controle de contratos, termos aditivos, PCA e semáforo de vigência.</li>
-                <li><strong>Infraestrutura DevOps (Docker & Compose):</strong> Todo o ecossistema (Portal React/Vite, Backend FastAPI/Uvicorn e banco PostgreSQL) é orquestrado através de contêineres Docker independentes (<code>Dockerfile</code> dedicados) e um arquivo <code>docker-compose.yml</code> unificado com mapeamento de volumes de rede de alto desempenho. Possui rotina de inicialização automática via scripts <code>.bat</code> (Windows) e <code>.sh</code> (Linux).</li>
-            </ul>
+
+            <!-- Tela 3.1 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 3.1: Dashboard Geral (Visão do Planejamento)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Métricas e Painéis de Consolidação:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Total consolidado em tempo real de demandas cadastradas, custo financeiro estimado global e detalhamento do progresso de preenchimento agrupado por departamento/setor.</li>
+                        <li>Gráficos analíticos demonstrando a fatia de recursos solicitados pelos laboratórios em relação ao orçamento disponível do plano.</li>
+                    </ul>
+                    <p><strong>Ação Finalizar Planejamento:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Botão posicionado na barra superior do painel que possibilita ao operador concluir e fechar a sua respectiva cota de planejamento.</li>
+                        <li><strong>Controle de Perfil:</strong> Visível unicamente para perfis com nível administrativo e operadores designados por setor. Fica ocultado no modo de visualização geral de relatórios.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tela 3.2 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 3.2: Lançamento e Cadastro de Itens (Demandas)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Estrutura de Entrada do Formulário:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Tipo do Item:</strong> Caixa de seleção definindo se a demanda refere-se a Material de Consumo ou a Serviço / Aquisição de Equipamento.</li>
+                        <li><strong>Descrição Técnica:</strong> Campo de texto completo para a especificação técnica detalhada das demandas dos insumos laboratoriais.</li>
+                        <li><strong>Unidade de Medida:</strong> Seleção rápida de padrões vigentes (unidades, frascos, litros, caixas fechadas).</li>
+                        <li><strong>Quantidade e Valor Unitário:</strong> Campos numéricos com máscaras e validação local de digitação de valores.</li>
+                        <li><strong>Valor Total:</strong> Calculado de forma automática através do produto da Quantidade pelo Valor Unitário, sendo um campo bloqueado para edição manual de dados.</li>
+                        <li><strong>Justificativa:</strong> Caixa de texto para fundamentação da necessidade e destinação final do insumo ou serviço.</li>
+                    </ul>
+                    <p><strong>Validação Geral de Submissão:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>O sistema impede o cadastro caso campos obrigatórios estejam nulos ou se os valores unitários ou quantitativos informados forem iguais ou inferiores a zero.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tela 3.3 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 3.3: Gestão de Pessoal e Operadores (Painel Admin)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Tabela de Operadores do PCA:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Exibe os operadores cadastrados com colunas para: Nome, Setor, Quantidade de demandas cadastradas, Status da edição e ações administrativas rápidas.</li>
+                    </ul>
+                    <p><strong>Avaliação de Status Combinados (Regras de Trava):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5 flex flex-col gap-2">
+                        <li class="flex gap-2 items-center"><span class="w-3 h-3 rounded-full bg-green-500 block"></span> <span><strong>Em Aberto (Liberado):</strong> Prazo global ativo e o operador possui permissões normais de escrita.</span></li>
+                        <li class="flex gap-2 items-center"><span class="w-3 h-3 rounded-full bg-gray-500 block"></span> <span><strong>Terminou (Bloqueado):</strong> Operador clicou no encerramento de demandas na sua respectiva interface, bloqueando novas edições locais.</span></li>
+                        <li class="flex gap-2 items-center"><span class="w-3 h-3 rounded-full bg-red-500 block"></span> <span><strong>Bloqueado (Prazo Expirado):</strong> O prazo máximo global de contratação foi atingido, impedindo o preenchimento de dados de forma automática.</span></li>
+                        <li class="flex gap-2 items-center"><span class="w-3 h-3 rounded-full bg-yellow-500 block animate-pulse"></span> <span><strong>Liberado (Individual):</strong> Permissão especial manual concedida pelo administrador do sistema. <strong>Esta liberação sobrepõe qualquer restrição temporal ou encerramento manual</strong>, permitindo edições pontuais a qualquer momento.</span></li>
+                    </ul>
+                    <p><strong>Atalho Rápido (Ações):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Ícone administrativo de chave (🔑) na tabela de operadores. Um clique rápido inverte de forma instantânea o status de liberação individual para aquele operador, permitindo restabelecer o direito de edição sem necessidade de navegação complexa de menus.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tela 3.4 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 3.4: Diálogo de Edição de Usuário (Modal Admin)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-2">
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Formulário modal contendo campos de edição rápida para Nome, E-mail de trabalho, Setor associado e Perfil de Acesso do usuário.</li>
+                        <li><strong>Interruptor Visual (Switch):</strong> Elemento deslizante com a marcação "Liberação Individual". Ao ser ativado, concede instantaneamente o privilégio especial de edição de demandas para o usuário selecionado, ignorando bloqueios por datas expiradas ou fechamentos lógicos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SISTEMA DE FOLHA DE PAGAMENTO (RH) -->
+        <section id="folha" class="space-y-8">
+            <h2 class="font-display text-2xl font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-secondary">payments</span> 4. Sistema de Folha de Pagamento (Recursos Humanos)
+            </h2>
+            <p class="text-base text-on-surface-variant dark:text-on-tertiary-fixed-variant leading-relaxed">
+                Painel administrativo completo para controle funcional dos colaboradores, cálculo matemático de encargos tributários e emissão de comprovantes de rendimento.
+            </p>
+
+            <!-- Tela 4.1 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 4.1: Dashboard do RH
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Indicadores Financeiros e Operacionais (KPIs):</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Quantitativos consolidados de servidores efetivos (concursados), ocupantes de cargos comissionados e contratos de natureza temporária.</li>
+                        <li>Totalizadores do custo financeiro bruto e líquido geral da folha referente ao mês sob consulta.</li>
+                    </ul>
+                    <p><strong>Alertas e Avisos Pendentes:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Mapeamento visual e links para novas portarias que impactam financeiramente a folha, além de listagem de períodos de férias aguardando homologação formal do setor de RH.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tela 4.2 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 4.2: Ficha Cadastral e Financeira do Servidor
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Estrutura de Abas de Cadastro do Colaborador:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Dados Pessoais e Funcionais:</strong> Mapeamento do Nome, CPF, matrícula de identificação, data de admissão, setor de alocação e tipo de vínculo funcional.</li>
+                        <li><strong>Configuração Salarial:</strong> Salário-base conforme tabelas estaduais de vencimentos, acrescido de campos para seleção de adicionais (insalubridade, gratificação por chefia, gratificação de periculosidade ou por tempo de serviço).</li>
+                        <li><strong>Férias e Afastamentos:</strong> Painel cronológico listando períodos aquisitivos abertos e históricos de gozo de férias passados ou agendamentos futuros.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tela 4.3 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 4.3: Tela de Processamento Mensal (Cálculo de Folha)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Configurações do Processamento:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Caixas de escolha para definição do mês e ano para o cálculo orçamentário.</li>
+                    </ul>
+                    <p><strong>Controles Operacionais e Console Visual:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Ação Processar Folha:</strong> Dispara os cálculos locais dos rendimentos brutos, faixas tributárias de INSS/IRRF e demais adicionais cadastrados para os servidores.</li>
+                        <li><strong>Console de Progresso em Tempo Real:</strong> Caixa preta com estilo de terminal de comandos que exibe em tempo real o log visual das validações e do processamento individual de cada servidor (ex: <code>[PROCESSANDO] Servidor Matrícula 28192... OK</code>).</li>
+                        <li><strong>Homologação do Fechamento:</strong> Ação que bloqueia de forma permanente o mês consultado contra novos reajustes ou alterações, finalizando e homologando os holerites.</li>
+                    </ul>
+                    <p><strong>Regras de Negócio e Cálculos Automatizados:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li><strong>Composição de Vencimentos:</strong> Soma da remuneração básica ao valor do convênio correspondente para cálculo unificado da base bruta de impostos.</li>
+                        <li><strong>Previdência Oficial:</strong> Deduz o INSS já retido em fontes de pagamento anteriores e efetua o cálculo regressivo/progressivo sobre a diferença excedente.</li>
+                        <li><strong>Faixas de Isenção e Impostos:</strong> Garante a isenção de IRRF em bases inferiores a R$ 5.000,00 e aplica parcelas dedutíveis progressivas para faixas de bases de até R$ 7.350,00.</li>
+                        <li><strong>Descontos de Faltas:</strong> Aplica fator proporcional de dias ausentes informado no ato de fechamento orçamentário sobre a remuneração integral do convênio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tela 4.4 -->
+            <div class="p-6 bg-surface-container dark:bg-inverse-surface/10 rounded-2xl border border-outline-variant/20 space-y-4">
+                <h3 class="font-display font-bold text-base text-secondary dark:text-secondary-fixed-dim flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tela 4.4: Contracheque Online (Portal do Servidor)
+                </h3>
+                <div class="text-sm text-on-surface-variant dark:text-on-tertiary-fixed-variant space-y-3">
+                    <p><strong>Filtros e Visualização do Contracheque:</strong></p>
+                    <ul class="list-disc pl-6 space-y-1.5">
+                        <li>Filtros simples por Mês e Ano de referência para consulta de registros anteriores.</li>
+                        <li><strong>Layout do Demonstrativo:</strong> Painel que simula o contracheque oficial impresso, contendo identificação da autarquia, identificação do colaborador, e tabela estruturada separando as rubricas de vencimentos e descontos, finalizada com os totais de proventos, redutores e valor líquido.</li>
+                        <li><strong>Ação de Impressão e PDF:</strong> Botão de exportação que gera versão amigável para impressão ou download direto do documento.</li>
+                        <li><strong>Painel de Informe de Rendimentos:</strong> Aba secundária para busca rápida e geração de informes tributários anuais para declaração fiscal.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
         
     </main>
@@ -517,7 +566,7 @@
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-item');
 
-    let activeSectionId = 'intro';
+    let activeSectionId = 'portal';
 
     const updateActiveItem = (id) => {
         navItems.forEach(item => {
@@ -557,12 +606,13 @@
         const scrollHeight = document.documentElement.scrollHeight;
 
         if (scrollPosition <= 80) {
-            updateActiveItem('intro');
+            updateActiveItem('portal');
         } else if (scrollPosition + windowHeight >= scrollHeight - 80) {
             const lastSectionId = sections[sections.length - 1].getAttribute('id');
             updateActiveItem(lastSectionId);
         }
     });
+
 </script>
 </body>
 </html>
